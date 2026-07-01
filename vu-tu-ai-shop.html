@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VŨ TƯ AI SHOP — Khóa Học & Tool Tạo Video AI #1 Việt Nam</title>
+  <meta name="description" content="Sở hữu bộ 3 vũ khí AI: Khóa học tạo video AI, Tool AI chuyên dụng và Tài khoản Gemini Pro 4 tháng. Bắt đầu ngay hôm nay!">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="VŨ TƯ AI SHOP — Tạo Video AI Chuyên Nghiệp Ngay Hôm Nay">
+  <meta property="og:description" content="Khóa học + Tool + Gemini Pro — Bộ 3 vũ khí AI hoàn chỉnh cho người Việt. Từ 99.000đ.">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts — Anton (tiêu đề) + Be Vietnam Pro (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy1: '#0B1E3F',
+            navy2: '#102A52',
+            navy3: '#1A3A6B',
+            navy4: '#0D2440',
+          },
+          fontFamily: {
+            heading: ['Anton', 'sans-serif'],
+            body:    ['"Be Vietnam Pro"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { font-family: 'Be Vietnam Pro', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Anton', sans-serif; letter-spacing: 0.02em; }
+    html { scroll-behavior: smooth; }
+
+    /* ── Navy SOLID backgrounds ── */
+    .bg-navy        { background: #0E1F40; }
+    .bg-navy-mid    { background: #0A1830; }
+    .bg-navy-dark   { background: #071428; }
+    .bg-navy-light  { background: #122454; }
+
+    /* Stripe overlay — tắt */
+    .stripe-bg { }
+
+    /* ── Card kính ── */
+    .card-glass {
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.6);
+    }
+    .card-navy {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    /* ── Divider ── */
+    .divider-dash { border-top: 2px dashed rgba(255,255,255,0.2); }
+
+    /* ══════════════════════════════════
+       NÚT CTA — GRADIENT NHẤP NHÁY
+    ══════════════════════════════════ */
+    .btn-cta {
+      background: linear-gradient(90deg, #00C6FF, #0072FF, #00C6FF);
+      background-size: 200% auto;
+      color: #fff;
+      font-family: 'Anton', sans-serif;
+      letter-spacing: 0.05em;
+      font-size: 1.1rem;
+      padding: 16px 36px;
+      border-radius: 50px;
+      display: inline-block;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 20px rgba(0,198,255,0.5), 0 0 40px rgba(0,114,255,0.3);
+      animation: shimmer 2.5s linear infinite, glowPulse 2s ease-in-out infinite;
+      transition: transform 0.2s;
+    }
+    .btn-cta:hover { transform: translateY(-3px) scale(1.02); }
+
+    @keyframes shimmer {
+      0%   { background-position: 200% center; }
+      100% { background-position: -200% center; }
+    }
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 20px rgba(0,198,255,0.5), 0 0 40px rgba(0,114,255,0.3); }
+      50%       { box-shadow: 0 0 35px rgba(0,198,255,0.9), 0 0 70px rgba(0,114,255,0.6); }
+    }
+
+    /* Nút Zalo phụ */
+    .btn-zalo {
+      background: transparent;
+      animation: zaloGlow 1.5s ease-in-out infinite;
+      color: #fff;
+      font-family: 'Anton', sans-serif;
+      letter-spacing: 0.05em;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: 50px;
+      border: 2px solid rgba(255,255,255,0.5);
+      display: inline-block;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+    .btn-zalo:hover { background: rgba(255,255,255,0.12); border-color: #FFD700; }
+    @keyframes zaloGlow {
+      0%, 100% { color: #FFD700; border-color: #FFD700; box-shadow: 0 0 8px rgba(255,215,0,0.4); }
+      50% { color: #FFA500; border-color: #FFA500; box-shadow: 0 0 20px rgba(255,165,0,0.7); }
+    }
+    .btn-telegram-pulse {
+      animation: telegramPulse 1.4s ease-in-out infinite;
+    }
+    @keyframes telegramPulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 8px rgba(34,158,217,0.5); }
+      50% { transform: scale(1.04); box-shadow: 0 0 22px rgba(34,158,217,0.9); }
+    }
+
+    /* ── Fade-in ── */
+    .fade-in { animation: fadeIn 0.8s ease-out; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Badge nhấp nháy ── */
+    @keyframes badgePulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0,198,255,0.6); }
+      50%       { box-shadow: 0 0 0 10px rgba(0,198,255,0); }
+    }
+    .badge-pulse { animation: badgePulse 2s infinite; }
+
+    /* ── FAQ ── */
+    .faq-answer { display: none; }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.25s; display: inline-block; }
+
+    /* ── Product card hover ── */
+    .product-card { transition: transform 0.25s, box-shadow 0.25s; }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,198,255,0.25);
+    }
+
+    /* ── Sticky bar ── */
+    #sticky-cta { transition: transform 0.3s ease; }
+
+    /* ── Lead form section ── */
+    .form-input {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 2px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-input::placeholder { color: rgba(255,255,255,0.4); }
+    .form-input:focus { border-color: #00C6FF; }
+
+    /* Gradient text */
+    .text-grad {
+      background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 3s linear infinite;
+    }
+
+    /* Stats gradient number */
+    .stat-num {
+      background: linear-gradient(135deg, #00C6FF, #38BFFF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+
+<body class="bg-navy">
+
+<!-- ═══════════════════════════════════════════════
+     STICKY HEADER
+════════════════════════════════════════════════ -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-navy-dark shadow-2xl" style="border-bottom:1px solid rgba(255,255,255,0.1);">
+  <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <span class="text-2xl">🤖</span>
+      <span style="font-family:'Anton',sans-serif;letter-spacing:0.05em;font-size:1.2rem;color:#fff;">VŨ TƯ AI SHOP</span>
+    </div>
+    <a href="#lead-form" class="btn-cta" style="padding:10px 22px;font-size:0.9rem;">
+      Đăng Ký Ngay
+    </a>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 1 — HERO
+════════════════════════════════════════════════ -->
+<section class="bg-navy pt-28 pb-16 px-4">
+  <div class="max-w-3xl mx-auto text-center fade-in">
+
+    <!-- Avatar người sáng lập — vị trí trên cùng -->
+    <div class="flex flex-col items-center mb-6">
+      <div class="relative inline-block mb-3">
+        <img
+          src="avatar.jpg"
+          alt="Vũ Thị Tư — Người sáng lập VŨ TƯ AI SHOP"
+          class="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover object-top"
+          style="border:3px solid #00C6FF;box-shadow:0 0 25px rgba(0,198,255,0.5);"
+          onerror="this.style.display='none';"
+        />
+        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap text-white text-xs font-bold px-3 py-1 rounded-full"
+             style="background:linear-gradient(90deg,#00C6FF,#0072FF);">
+          ✓ KOL AI Go Global
+        </div>
+      </div>
+      <p class="text-blue-200 text-sm font-semibold tracking-wide">VŨ THỊ TƯ — Chuyên gia Video AI</p>
+    </div>
+
+    <!-- Pre-headline badge -->
+    <div class="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold mb-4 badge-pulse"
+         style="background:rgba(0,198,255,0.15);border:1px solid rgba(0,198,255,0.4);color:#00C6FF;">
+      <span class="w-2 h-2 rounded-full inline-block" style="background:#00C6FF;"></span>
+      Dành cho anh/chị muốn làm chủ công nghệ AI tạo video
+    </div>
+
+    <!-- Headline -->
+    <h1 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;font-size:clamp(1.7rem,5vw,2.8rem);line-height:1.1;color:#fff;text-shadow:0 0 30px rgba(0,198,255,0.3);" class="mb-2">
+      TẠO VIDEO AI CHUYÊN NGHIỆP<br>
+      <span class="text-grad">TRONG 30 PHÚT</span>
+    </h1>
+
+    <!-- Subheadline -->
+    <p class="text-blue-100 text-sm md:text-base font-medium mb-1 leading-relaxed">
+      Không cần kinh nghiệm — Không cần máy tính mạnh — Bắt đầu ngay hôm nay
+    </p>
+    <p class="text-blue-200 text-xs md:text-sm mb-6">
+      Khóa học + Tool AI + Tài khoản Gemini Pro — <strong class="text-white">Bộ 3 hoàn chỉnh</strong> cho người Việt Nam
+    </p>
+
+    <!-- CTA primary -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+      <a href="#lead-form" class="btn-cta w-full sm:w-auto">
+        🚀 ĐĂNG KÝ NHẬN TƯ VẤN MIỄN PHÍ
+      </a>
+      <a href="http://zalo.me/84973671215" target="_blank" class="btn-zalo w-full sm:w-auto">
+        💬 Hỏi Qua Zalo
+      </a>
+    </div>
+
+    <!-- Trust indicators -->
+    <div class="flex flex-wrap justify-center gap-4 text-blue-200 text-sm font-medium">
+      <span>✅ 500+ khách hàng tin dùng</span>
+      <span>⭐ Đánh giá 4.9/5</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 2 — PROBLEM (Nỗi đau)
+════════════════════════════════════════════════ -->
+<section class="bg-navy-mid py-16 px-4">
+  <div class="max-w-3xl mx-auto">
+    <div class="card-navy rounded-3xl p-8 md:p-10">
+      <h2 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;color:#fff;font-size:1.8rem;" class="text-center mb-6">
+        ANH/CHỊ CÓ ĐANG GẶP NHỮNG VẤN ĐỀ NÀY KHÔNG?
+      </h2>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3 p-4 rounded-2xl" style="background:rgba(255,80,80,0.1);border:1px solid rgba(255,80,80,0.2);">
+          <span class="text-2xl flex-shrink-0">😩</span>
+          <p class="text-blue-100">Bạn từng mày mò cả ngày trời mới tạo ra được 1 video, trong khi mọi người chỉ cần <strong class="text-white">bấm nút một cái là sản xuất hàng loạt video</strong> — thời gian còn lại họ thảnh thơi bên gia đình hoặc học các kỹ năng mới</p>
+        </div>
+        <div class="flex items-start gap-3 p-4 rounded-2xl" style="background:rgba(255,80,80,0.1);border:1px solid rgba(255,80,80,0.2);">
+          <span class="text-2xl flex-shrink-0">😤</span>
+          <p class="text-blue-100">Bạn từng mua nhiều Tool tạo video AI nhưng <strong class="text-white">giao diện khó dùng và không có tài liệu hướng dẫn</strong> cách dùng Tool</p>
+        </div>
+        <div class="flex items-start gap-3 p-4 rounded-2xl" style="background:rgba(255,80,80,0.1);border:1px solid rgba(255,80,80,0.2);">
+          <span class="text-2xl flex-shrink-0">💸</span>
+          <p class="text-blue-100">Bạn từng mua tài khoản Gemini Pro nhưng <strong class="text-white">chỉ dùng được vài ngày lại hết tín dụng (credit)</strong></p>
+        </div>
+      </div>
+      <p class="text-center text-blue-300 mt-6 italic text-sm">
+        → Công nghệ AI đang thay đổi mỗi ngày. Người bắt đầu sớm hơn sẽ có lợi thế lớn hơn.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 3 — SOLUTION (Giới thiệu)
+════════════════════════════════════════════════ -->
+<section class="bg-navy py-16 px-4">
+  <div class="max-w-3xl mx-auto text-center">
+    <p class="text-blue-300 font-semibold uppercase tracking-widest text-sm mb-3">Giải pháp toàn diện</p>
+    <h2 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;color:#fff;font-size:clamp(1.8rem,5vw,2.8rem);" class="mb-4">
+      GIỚI THIỆU: <span class="text-grad">VŨ TƯ AI SHOP</span>
+    </h2>
+    <p class="text-blue-100 text-lg mb-10">
+      Hệ sinh thái AI đầu tiên kết hợp đủ <strong class="text-white">3 yếu tố cốt lõi</strong> — học, làm, và có trợ lý AI bên cạnh 24/7
+    </p>
+
+    <!-- 3 sản phẩm -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Sản phẩm 1 -->
+      <div class="product-card card-glass rounded-3xl p-6 text-left">
+        <div class="text-5xl mb-4">🎓</div>
+        <div class="inline-block text-xs font-bold px-3 py-1 rounded-full mb-3" style="background:#EEF2FF;color:#3730A3;">KHÓA HỌC</div>
+        <h3 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#0B1E3F;font-size:1.2rem;" class="mb-2">TẠO VIDEO AI</h3>
+        <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+          Học từng bước từ cơ bản đến nâng cao. Ví dụ thực tế tiếng Việt. Xem lại không giới hạn.
+        </p>
+        <div class="divider-dash mb-4" style="border-color:rgba(11,30,63,0.15);"></div>
+        <div class="flex items-end gap-2">
+          <span class="text-gray-400 line-through text-sm">999.000đ</span>
+          <span style="font-family:'Anton',sans-serif;font-size:1.5rem;color:#0072FF;">599.000đ</span>
+        </div>
+      </div>
+
+      <!-- Sản phẩm 2 -->
+      <div class="product-card card-glass rounded-3xl p-6 text-left relative overflow-hidden" style="border:2px solid #00C6FF;">
+        <div class="absolute top-0 left-0 right-0 text-white text-xs font-bold py-1 text-center" style="background:linear-gradient(90deg,#00C6FF,#0072FF);">
+          ⚡ PHỔ BIẾN NHẤT
+        </div>
+        <div class="text-5xl mb-4 mt-6">🛠️</div>
+        <div class="inline-block text-xs font-bold px-3 py-1 rounded-full mb-3" style="background:#FFF7ED;color:#C2410C;">TOOL AI</div>
+        <h3 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#0B1E3F;font-size:1.2rem;" class="mb-2">TOOL TẠO VIDEO AI</h3>
+        <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+          Sản xuất video AI <strong>hàng loạt</strong> chỉ với vài cú click. Kèm video hướng dẫn tỉ mỉ, cầm tay chỉ việc từng bước — không lo bỡ ngỡ.
+        </p>
+        <div class="divider-dash mb-4" style="border-color:rgba(11,30,63,0.15);"></div>
+        <div class="flex items-end gap-2">
+          <span class="text-gray-400 line-through text-sm">299.000đ</span>
+          <span style="font-family:'Anton',sans-serif;font-size:1.5rem;color:#0072FF;">99.000đ</span>
+        </div>
+      </div>
+
+      <!-- Sản phẩm 3 -->
+      <div class="product-card card-glass rounded-3xl p-6 text-left">
+        <div class="text-5xl mb-4">🤖</div>
+        <div class="inline-block text-xs font-bold px-3 py-1 rounded-full mb-3" style="background:#F5F3FF;color:#6D28D9;">GEMINI PRO</div>
+        <h3 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#0B1E3F;font-size:1.2rem;" class="mb-2">GEMINI PRO 4 THÁNG</h3>
+        <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+          Vũ Tư <strong>gọi điện hướng dẫn nâng cấp trong 1 phút</strong> — bạn tự thao tác trên email của mình nên thông tin được bảo mật tuyệt đối.
+        </p>
+        <div class="divider-dash mb-4" style="border-color:rgba(11,30,63,0.15);"></div>
+        <div class="flex items-end gap-2">
+          <span class="text-gray-400 line-through text-sm">499.000đ</span>
+          <span style="font-family:'Anton',sans-serif;font-size:1.5rem;color:#0072FF;">199.000đ</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <a href="#lead-form" class="btn-cta">
+        🎯 ĐĂNG KÝ TƯ VẤN & MUA NGAY
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 4 — BENEFITS (Lợi ích)
+════════════════════════════════════════════════ -->
+<section class="bg-navy-mid py-16 px-4">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-10">
+      <h2 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;color:#fff;font-size:clamp(1.6rem,4vw,2.4rem);" class="mb-3">
+        KHI SỞ HỮU BỘ 3 NÀY, ANH/CHỊ SẼ...
+      </h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="card-navy rounded-2xl p-5 flex items-start gap-4">
+        <span class="text-3xl flex-shrink-0">⚡</span>
+        <div>
+          <h4 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#fff;font-size:1rem;" class="mb-1">TẠO VIDEO AI CHẤT LƯỢNG CAO TRONG 30 PHÚT</h4>
+          <p class="text-blue-200 text-sm">Thay vì mất cả ngày mò mẫm trên YouTube không có kết quả</p>
+        </div>
+      </div>
+      <div class="card-navy rounded-2xl p-5 flex items-start gap-4">
+        <span class="text-3xl flex-shrink-0">💰</span>
+        <div>
+          <h4 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#fff;font-size:1rem;" class="mb-1">TIẾT KIỆM 3–5 TRIỆU ĐỒNG MỖI THÁNG</h4>
+          <p class="text-blue-200 text-sm">Chi phí thuê editor hoặc mua tool lẻ không hiệu quả</p>
+        </div>
+      </div>
+      <div class="card-navy rounded-2xl p-5 flex items-start gap-4">
+        <span class="text-3xl flex-shrink-0">🤖</span>
+        <div>
+          <h4 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#fff;font-size:1rem;" class="mb-1">TRỢ LÝ AI GEMINI PRO BÊN CẠNH 24/7</h4>
+          <p class="text-blue-200 text-sm">Viết kịch bản, lên ý tưởng, tối ưu nội dung mọi lúc mọi nơi</p>
+        </div>
+      </div>
+      <div class="card-navy rounded-2xl p-5 flex items-start gap-4">
+        <span class="text-3xl flex-shrink-0">🚀</span>
+        <div>
+          <h4 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#fff;font-size:1rem;" class="mb-1">LÀM CHỦ XU HƯỚNG AI ĐANG BÙNG NỔ</h4>
+          <p class="text-blue-200 text-sm">Đi trước đám đông, xây dựng lợi thế cạnh tranh từ hôm nay</p>
+        </div>
+      </div>
+      <div class="card-navy rounded-2xl p-5 flex items-start gap-4">
+        <span class="text-3xl flex-shrink-0">📱</span>
+        <div>
+          <h4 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#fff;font-size:1rem;" class="mb-1">BẮT ĐẦU NGAY — KHÔNG CẦN MÁY TÍNH MẠNH</h4>
+          <p class="text-blue-200 text-sm">Tool chạy trên đám mây, chỉ cần điện thoại hoặc laptop bình thường</p>
+        </div>
+      </div>
+      <div class="card-navy rounded-2xl p-5 flex items-start gap-4">
+        <span class="text-3xl flex-shrink-0">🎯</span>
+        <div>
+          <h4 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#fff;font-size:1rem;" class="mb-1">HỌC MỘT LẦN, DÙNG MÃI MÃI</h4>
+          <p class="text-blue-200 text-sm">Kiến thức và kỹ năng AI không ai có thể lấy đi khỏi anh/chị</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 5 — HOW IT WORKS (3 bước)
+════════════════════════════════════════════════ -->
+<section class="bg-navy py-16 px-4">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;color:#fff;font-size:clamp(1.6rem,4vw,2.4rem);" class="mb-2">
+      HỆ THỐNG HOẠT ĐỘNG NHƯ THẾ NÀO?
+    </h2>
+    <p class="text-blue-200 mb-10">Chỉ 3 bước đơn giản để bắt đầu</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="card-navy rounded-3xl p-6">
+        <div class="w-14 h-14 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4"
+             style="background:linear-gradient(135deg,#00C6FF,#0072FF);font-family:'Anton',sans-serif;">1</div>
+        <h3 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#fff;font-size:1.1rem;" class="mb-2">HỌC → ÁP DỤNG NGAY</h3>
+        <p class="text-blue-200 text-sm">Khóa học từng bước, ví dụ thực tế. Học xong bài nào, làm được ngay bài đó.</p>
+      </div>
+      <div class="card-navy rounded-3xl p-6">
+        <div class="w-14 h-14 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4"
+             style="background:linear-gradient(135deg,#00C6FF,#0072FF);font-family:'Anton',sans-serif;">2</div>
+        <h3 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#fff;font-size:1.1rem;" class="mb-2">TẠO → DÙNG TOOL CHUYÊN DỤNG</h3>
+        <p class="text-blue-200 text-sm">Nhập ý tưởng vào tool AI → nhận video hoàn chỉnh trong vài phút.</p>
+      </div>
+      <div class="card-navy rounded-3xl p-6">
+        <div class="w-14 h-14 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4"
+             style="background:linear-gradient(135deg,#00C6FF,#0072FF);font-family:'Anton',sans-serif;">3</div>
+        <h3 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#fff;font-size:1.1rem;" class="mb-2">NÂNG CẤP → GEMINI PRO HỖ TRỢ</h3>
+        <p class="text-blue-200 text-sm">Dùng Gemini Pro viết kịch bản, brainstorm và tối ưu nội dung không giới hạn.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 6 — SOCIAL PROOF (Testimonials)
+════════════════════════════════════════════════ -->
+<section class="bg-navy-mid py-16 px-4">
+  <div class="max-w-3xl mx-auto">
+    <h2 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;color:#fff;font-size:clamp(1.6rem,4vw,2.4rem);" class="text-center mb-2">
+      KHÁCH HÀNG NÓI GÌ?
+    </h2>
+    <p class="text-blue-200 text-center mb-8">Hơn 500 người đã tin dùng VŨ TƯ AI SHOP</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+      <div class="card-glass rounded-3xl p-6">
+        <div class="flex mb-3"><span class="text-yellow-400 text-lg">⭐⭐⭐⭐⭐</span></div>
+        <p class="text-gray-700 text-sm italic mb-4 leading-relaxed">
+          "Trước đây tôi không biết gì về AI. Sau khóa học, tôi đã tạo video viral đầu tiên với <strong>50.000 lượt xem</strong> chỉ sau 2 tuần. Hướng dẫn rất rõ ràng."
+        </p>
+        <p class="font-bold text-navy1 text-sm">— Minh Hùng, 28 tuổi</p>
+        <p class="text-gray-400 text-xs">Hà Nội</p>
+      </div>
+      <div class="card-glass rounded-3xl p-6">
+        <div class="flex mb-3"><span class="text-yellow-400 text-lg">⭐⭐⭐⭐⭐</span></div>
+        <p class="text-gray-700 text-sm italic mb-4 leading-relaxed">
+          "Mua tài khoản Gemini Pro ở đây là quyết định đúng nhất. Giá tốt, có hỗ trợ tiếng Việt. <strong>Hiệu quả gấp 10 lần</strong> làm thủ công."
+        </p>
+        <p class="font-bold text-navy1 text-sm">— Thu Hương</p>
+        <p class="text-gray-400 text-xs">Freelancer Content, TP.HCM</p>
+      </div>
+      <div class="card-glass rounded-3xl p-6">
+        <div class="flex mb-3"><span class="text-yellow-400 text-lg">⭐⭐⭐⭐⭐</span></div>
+        <p class="text-gray-700 text-sm italic mb-4 leading-relaxed">
+          "Hỗ trợ rất tốt, hỏi là được trả lời ngay. <strong>Mua là có hướng dẫn chi tiết.</strong> Rất tin tưởng, sẽ giới thiệu bạn bè."
+        </p>
+        <p class="font-bold text-navy1 text-sm">— Quang Đại</p>
+        <p class="text-gray-400 text-xs">Chủ kênh YouTube 12.000 subscribers</p>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="card-navy rounded-3xl p-6">
+      <div class="grid grid-cols-3 gap-4 text-center">
+        <div>
+          <div class="stat-num text-3xl" style="font-family:'Anton',sans-serif;">500+</div>
+          <div class="text-blue-200 text-sm">Khách hàng tin dùng</div>
+        </div>
+        <div>
+          <div class="stat-num text-3xl" style="font-family:'Anton',sans-serif;">4.9/5</div>
+          <div class="text-blue-200 text-sm">Điểm đánh giá</div>
+        </div>
+        <div>
+          <div class="stat-num text-3xl" style="font-family:'Anton',sans-serif;">98%</div>
+          <div class="text-blue-200 text-sm">Hài lòng & giới thiệu</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 8 — PAYMENT (Thanh toán)
+════════════════════════════════════════════════ -->
+<section id="payment" class="bg-navy py-16 px-4">
+  <div class="max-w-3xl mx-auto">
+    <h2 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;color:#fff;font-size:clamp(1.6rem,4vw,2.4rem);" class="text-center mb-2">
+      CHỌN SẢN PHẨM & THANH TOÁN
+    </h2>
+    <p class="text-blue-200 text-center mb-10">Quét mã QR — xác nhận tức thì — nhận sản phẩm trong 15 phút</p>
+
+    <!-- 3 gói riêng lẻ -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+
+      <!-- Gói 1 -->
+      <div class="card-glass rounded-3xl p-6 text-center product-card">
+        <div class="text-4xl mb-3">🎓</div>
+        <h3 style="font-family:'Anton',sans-serif;color:#0B1E3F;font-size:1.05rem;" class="mb-1">KHÓA HỌC VIDEO AI</h3>
+        <p class="text-gray-500 text-xs mb-4">Học từng bước, xem lại không giới hạn</p>
+        <div class="mb-4">
+          <span class="text-gray-400 line-through text-sm block">999.000đ</span>
+          <span style="font-family:'Anton',sans-serif;font-size:1.8rem;color:#0072FF;">599.000đ</span>
+        </div>
+        <img src="https://img.vietqr.io/image/MB-0973671215-compact2.png?amount=599000&addInfo=VUTU%20AI%20COACH&accountName=VU%20THI%20TU"
+          alt="QR thanh toán khóa học video AI — Vietcombank"
+          class="w-48 h-48 mx-auto rounded-xl mb-4" loading="lazy"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div style="display:none" class="w-48 h-48 mx-auto bg-gray-100 rounded-xl items-center justify-center text-gray-400 text-xs mb-4">[QR khi có mạng]</div>
+        <div class="bg-blue-50 rounded-xl p-3 text-left text-xs">
+          <p class="font-semibold text-gray-700 mb-1">Chuyển khoản:</p>
+          <p class="text-gray-600">🏦 MB Bank</p>
+          <p class="text-gray-600">📋 STK: <strong>0973671215</strong></p>
+          <p class="text-gray-600">👤 VU THI TU</p>
+          <p class="text-gray-600">💬 ND: <strong>VUTU AI COACH</strong></p>
+        </div>
+        <a href="http://zalo.me/84973671215" target="_blank"
+           class="mt-3 flex items-center justify-center gap-2 w-full rounded-xl text-sm font-bold py-3 btn-telegram-pulse"
+           style="background:linear-gradient(90deg,#0072FF,#00C6FF);color:#fff;">
+          💬 Liên Hệ Admin Nhận Sản Phẩm
+        </a>
+      </div>
+
+      <!-- Gói 2 -->
+      <div class="card-glass rounded-3xl p-6 text-center product-card relative overflow-hidden" style="border:2px solid #00C6FF;">
+        <div class="absolute top-0 left-0 right-0 text-white text-xs font-bold py-1 text-center"
+             style="background:linear-gradient(90deg,#00C6FF,#0072FF);">⚡ PHỔ BIẾN NHẤT</div>
+        <div class="text-4xl mb-3 mt-5">🛠️</div>
+        <h3 style="font-family:'Anton',sans-serif;color:#0B1E3F;font-size:1.05rem;" class="mb-1">TOOL TẠO VIDEO AI</h3>
+        <p class="text-gray-500 text-xs mb-4">Nhập ý tưởng → Ra video ngay lập tức</p>
+        <div class="mb-4">
+          <span class="text-gray-400 line-through text-sm block">299.000đ</span>
+          <span style="font-family:'Anton',sans-serif;font-size:1.8rem;color:#0072FF;">99.000đ</span>
+        </div>
+        <img src="https://img.vietqr.io/image/MB-0973671215-compact2.png?amount=99000&addInfo=VUTU%20AI%20TOOL&accountName=VU%20THI%20TU"
+          alt="QR thanh toán tool video AI — Vietcombank"
+          class="w-48 h-48 mx-auto rounded-xl mb-4" loading="lazy"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div style="display:none" class="w-48 h-48 mx-auto bg-gray-100 rounded-xl items-center justify-center text-gray-400 text-xs mb-4">[QR khi có mạng]</div>
+        <div class="bg-blue-50 rounded-xl p-3 text-left text-xs">
+          <p class="font-semibold text-gray-700 mb-1">Chuyển khoản:</p>
+          <p class="text-gray-600">🏦 MB Bank</p>
+          <p class="text-gray-600">📋 STK: <strong>0973671215</strong></p>
+          <p class="text-gray-600">👤 VU THI TU</p>
+          <p class="text-gray-600">💬 ND: <strong>VUTU AI TOOL</strong></p>
+        </div>
+        <a href="http://zalo.me/84973671215" target="_blank"
+           class="mt-3 flex items-center justify-center gap-2 w-full rounded-xl text-sm font-bold py-3 btn-telegram-pulse"
+           style="background:linear-gradient(90deg,#0072FF,#00C6FF);color:#fff;">
+          💬 Liên Hệ Admin Nhận Sản Phẩm
+        </a>
+      </div>
+
+      <!-- Gói 3 -->
+      <div class="card-glass rounded-3xl p-6 text-center product-card">
+        <div class="text-4xl mb-3">🤖</div>
+        <h3 style="font-family:'Anton',sans-serif;color:#0B1E3F;font-size:1.05rem;" class="mb-1">GEMINI PRO 4 THÁNG</h3>
+        <p class="text-gray-500 text-xs mb-4">Trợ lý AI mạnh nhất từ Google</p>
+        <div class="mb-4">
+          <span class="text-gray-400 line-through text-sm block">499.000đ</span>
+          <span style="font-family:'Anton',sans-serif;font-size:1.8rem;color:#0072FF;">199.000đ</span>
+        </div>
+        <img src="https://img.vietqr.io/image/MB-0973671215-compact2.png?amount=199000&addInfo=VUTU%20GEMINI%20PRO&accountName=VU%20THI%20TU"
+          alt="QR thanh toán Gemini Pro — Vietcombank"
+          class="w-48 h-48 mx-auto rounded-xl mb-4" loading="lazy"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div style="display:none" class="w-48 h-48 mx-auto bg-gray-100 rounded-xl items-center justify-center text-gray-400 text-xs mb-4">[QR khi có mạng]</div>
+        <div class="bg-blue-50 rounded-xl p-3 text-left text-xs">
+          <p class="font-semibold text-gray-700 mb-1">Chuyển khoản:</p>
+          <p class="text-gray-600">🏦 MB Bank</p>
+          <p class="text-gray-600">📋 STK: <strong>0973671215</strong></p>
+          <p class="text-gray-600">👤 VU THI TU</p>
+          <p class="text-gray-600">💬 ND: <strong>VUTU GEMINI PRO</strong></p>
+        </div>
+        <div class="mt-3 text-xs text-center space-y-1" style="color:#0072FF;">
+          <p>✅ Email chính chủ</p>
+          <p>🛡️ Bảo hành fulltime</p>
+          <p>🔒 Bảo mật thông tin tuyệt đối</p>
+        </div>
+        <a href="http://zalo.me/84973671215" target="_blank"
+           class="mt-3 flex items-center justify-center gap-2 w-full rounded-xl text-sm font-bold py-3 btn-telegram-pulse"
+           style="background:linear-gradient(90deg,#0072FF,#00C6FF);color:#fff;">
+          💬 Liên Hệ Admin Nhận Sản Phẩm
+        </a>
+      </div>
+    </div>
+
+    <!-- Gói COMBO -->
+    <div class="card-glass rounded-3xl p-8 text-center" style="border:2px solid #00C6FF;">
+      <div class="inline-block text-white text-sm font-bold px-4 py-1 rounded-full mb-4"
+           style="background:linear-gradient(90deg,#FF6B00,#FF9500);">
+        🔥 COMBO TIẾT KIỆM NHẤT
+      </div>
+      <h3 style="font-family:'Anton',sans-serif;color:#0B1E3F;font-size:1.6rem;" class="mb-2">MUA CẢ BỘ 3 — TIẾT KIỆM NHẤT</h3>
+      <p class="text-gray-500 mb-4">Khóa học + Tool AI + Gemini Pro 4 tháng</p>
+      <div class="mb-6">
+        <span class="text-gray-400 line-through text-sm block">1.797.000đ</span>
+        <span style="font-family:'Anton',sans-serif;font-size:2.5rem;color:#0072FF;">897.000đ</span>
+        <span class="block text-green-600 text-sm font-semibold mt-1">Tiết kiệm 900.000đ (50%)</span>
+      </div>
+      <img src="https://img.vietqr.io/image/MB-0973671215-compact2.png?amount=897000&addInfo=VUTU%20COMBO%20AI&accountName=VU%20THI%20TU"
+        alt="QR thanh toán combo bộ 3 — Vietcombank"
+        class="w-56 h-56 mx-auto rounded-xl mb-4" loading="lazy"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div style="display:none" class="w-56 h-56 mx-auto bg-gray-100 rounded-xl items-center justify-center text-gray-400 text-xs mb-4">[QR khi có mạng]</div>
+      <div class="bg-blue-50 rounded-xl p-4 text-left text-sm mb-4 max-w-xs mx-auto">
+        <p class="font-semibold text-gray-700 mb-2">Chuyển khoản thủ công:</p>
+        <p class="text-gray-600">🏦 Ngân hàng: <strong>MB Bank</strong></p>
+        <p class="text-gray-600">📋 Số TK: <strong>0973671215</strong></p>
+        <p class="text-gray-600">👤 Chủ TK: <strong>VU THI TU</strong></p>
+        <p class="text-gray-600">💰 Số tiền: <strong>897.000đ</strong></p>
+        <p class="text-gray-600">💬 Nội dung: <strong>VUTU COMBO AI</strong></p>
+      </div>
+      <p class="text-gray-500 text-xs">Quét bằng bất kỳ app ngân hàng nào • 44+ ngân hàng Việt Nam hỗ trợ</p>
+    </div>
+
+    <!-- Sau thanh toán -->
+    <div class="mt-6 card-navy rounded-2xl p-5 text-center">
+      <p class="text-white font-semibold mb-2">📲 Sau khi thanh toán xong:</p>
+      <p class="text-blue-200 text-sm mb-3">Nhắn tin xác nhận qua Zalo — anh/chị nhận sản phẩm trong <strong class="text-white">15 phút</strong></p>
+      <a href="http://zalo.me/84973671215" target="_blank" class="btn-cta" style="font-size:1rem;padding:14px 28px;">
+        💬 NHẮN ZALO XÁC NHẬN THANH TOÁN
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 10 — FAQ (Xử lý từ chối)
+════════════════════════════════════════════════ -->
+<section class="bg-navy py-16 px-4">
+  <div class="max-w-3xl mx-auto">
+    <h2 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;color:#fff;font-size:clamp(1.6rem,4vw,2.4rem);" class="text-center mb-8">
+      CÂU HỎI THƯỜNG GẶP
+    </h2>
+    <div class="space-y-3" id="faq-container">
+
+      <div class="faq-item rounded-2xl overflow-hidden cursor-pointer card-navy">
+        <div class="faq-header flex items-center justify-between p-5" onclick="toggleFaq(this.parentElement)">
+          <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-weight:600;color:#fff;font-size:0.95rem;" class="pr-4">Tôi không có kinh nghiệm về AI — có học được không?</h4>
+          <span class="faq-icon text-blue-300 text-2xl flex-shrink-0" style="font-weight:300;">+</span>
+        </div>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-blue-200 text-sm leading-relaxed">Được, và đây chính xác là đối tượng chúng tôi thiết kế sản phẩm cho. Khóa học bắt đầu từ con số 0, từng bước rõ ràng. Hàng trăm học viên không có nền tảng kỹ thuật đã thành công trước anh/chị.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-2xl overflow-hidden cursor-pointer card-navy">
+        <div class="faq-header flex items-center justify-between p-5" onclick="toggleFaq(this.parentElement)">
+          <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-weight:600;color:#fff;font-size:0.95rem;" class="pr-4">Máy tính tôi cấu hình thấp — có dùng được không?</h4>
+          <span class="faq-icon text-blue-300 text-2xl flex-shrink-0" style="font-weight:300;">+</span>
+        </div>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-blue-200 text-sm leading-relaxed">Hoàn toàn được. Tool và Gemini Pro đều chạy trên nền tảng đám mây — anh/chị chỉ cần trình duyệt và kết nối internet. Không cần máy tính mạnh hay GPU đắt tiền.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-2xl overflow-hidden cursor-pointer card-navy">
+        <div class="faq-header flex items-center justify-between p-5" onclick="toggleFaq(this.parentElement)">
+          <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-weight:600;color:#fff;font-size:0.95rem;" class="pr-4">Tài khoản Gemini Pro có phải tài khoản chia sẻ không?</h4>
+          <span class="faq-icon text-blue-300 text-2xl flex-shrink-0" style="font-weight:300;">+</span>
+        </div>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-blue-200 text-sm leading-relaxed">Không. Đây là tài khoản riêng biệt, được kích hoạt đầy đủ tính năng Gemini Pro trong 4 tháng, dành riêng cho anh/chị sử dụng.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-2xl overflow-hidden cursor-pointer card-navy">
+        <div class="faq-header flex items-center justify-between p-5" onclick="toggleFaq(this.parentElement)">
+          <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-weight:600;color:#fff;font-size:0.95rem;" class="pr-4">Sau khi thanh toán, tôi nhận sản phẩm bằng cách nào?</h4>
+          <span class="faq-icon text-blue-300 text-2xl flex-shrink-0" style="font-weight:300;">+</span>
+        </div>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-blue-200 text-sm leading-relaxed">Sau khi chuyển khoản, anh/chị nhắn tin xác nhận qua Zalo. Chúng tôi giao sản phẩm trong vòng 15 phút làm việc.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-2xl overflow-hidden cursor-pointer card-navy">
+        <div class="faq-header flex items-center justify-between p-5" onclick="toggleFaq(this.parentElement)">
+          <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-weight:600;color:#fff;font-size:0.95rem;" class="pr-4">Đây có phải lừa đảo không? Tôi lo ngại về độ tin cậy.</h4>
+          <span class="faq-icon text-blue-300 text-2xl flex-shrink-0" style="font-weight:300;">+</span>
+        </div>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-blue-200 text-sm leading-relaxed">Hoàn toàn hiểu lo ngại của anh/chị — đây là câu hỏi thông minh. VŨ TƯ AI SHOP đã phục vụ hơn 500 khách hàng. Anh/chị có thể liên hệ Zalo để hỏi trước khi mua và xem đánh giá thực tế từ khách hàng trước.</p>
+        </div>
+      </div>
+
+
+      <!-- ── TỪ CHỐI VỀ GIÁ ── -->
+      <div class="px-5 pt-6 pb-2">
+        <p class="text-blue-400 text-xs font-bold uppercase tracking-widest">💰 Về giá cả & giá trị</p>
+      </div>
+
+      <div class="faq-item rounded-2xl overflow-hidden cursor-pointer card-navy">
+        <div class="faq-header flex items-center justify-between p-5" onclick="toggleFaq(this.parentElement)">
+          <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-weight:600;color:#fff;font-size:0.95rem;" class="pr-4">Học AI tại sao lại rẻ vậy? Chỉ 99.000đ — 599.000đ có thực sự chất lượng không?</h4>
+          <span class="faq-icon text-blue-300 text-2xl flex-shrink-0" style="font-weight:300;">+</span>
+        </div>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-blue-200 text-sm leading-relaxed mb-3">Câu hỏi rất hay! Giá thấp không có nghĩa là chất lượng kém — mà là chúng tôi chọn tiếp cận được nhiều người hơn thay vì lợi nhuận cao. Hãy so sánh: thuê 1 video editor làm 1 clip tốn <strong class="text-white">500.000 – 2.000.000đ</strong>, mà anh/chị chỉ tốn <strong class="text-white">99.000đ</strong> để sở hữu tool tự làm mãi mãi. Chất lượng thực tế — hỏi 500+ khách đã mua sẽ rõ.</p>
+          <div class="rounded-xl p-3 text-xs italic text-blue-300" style="background:rgba(0,198,255,0.08);border:1px solid rgba(0,198,255,0.15);">
+            "Tôi từng nghĩ rẻ là không tốt. Nhưng sau khi dùng thử mới thấy chất lượng hơn khóa học 3 triệu tôi từng mua." — Minh Hùng, Hà Nội
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-2xl overflow-hidden cursor-pointer card-navy">
+        <div class="faq-header flex items-center justify-between p-5" onclick="toggleFaq(this.parentElement)">
+          <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-weight:600;color:#fff;font-size:0.95rem;" class="pr-4">Tôi đang ít tiền — có thể mua từng sản phẩm riêng lẻ không?</h4>
+          <span class="faq-icon text-blue-300 text-2xl flex-shrink-0" style="font-weight:300;">+</span>
+        </div>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-blue-200 text-sm leading-relaxed">Hoàn toàn được. Anh/chị có thể bắt đầu với <strong class="text-white">Tool AI chỉ 99.000đ</strong> — dùng thử, thấy hiệu quả rồi nâng cấp dần. Không ai bắt buộc mua tất cả cùng lúc. Nhưng nếu mua combo ngay thì tiết kiệm được 900.000đ — tương đương 9 tháng cà phê sáng.</p>
+        </div>
+      </div>
+
+      <!-- ── TỪ CHỐI VỀ KỸ THUẬT ── -->
+      <div class="px-5 pt-6 pb-2">
+        <p class="text-blue-400 text-xs font-bold uppercase tracking-widest">🛠️ Về kỹ thuật & khả năng học</p>
+      </div>
+
+      <div class="faq-item rounded-2xl overflow-hidden cursor-pointer card-navy">
+        <div class="faq-header flex items-center justify-between p-5" onclick="toggleFaq(this.parentElement)">
+          <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-weight:600;color:#fff;font-size:0.95rem;" class="pr-4">Tôi không giỏi công nghệ, không biết AI gì cả — có học được không?</h4>
+          <span class="faq-icon text-blue-300 text-2xl flex-shrink-0" style="font-weight:300;">+</span>
+        </div>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-blue-200 text-sm leading-relaxed mb-2">Đây là lo ngại phổ biến nhất — và cũng là lý do chúng tôi thiết kế khóa học từ <strong class="text-white">con số 0 tuyệt đối</strong>. Nếu anh/chị biết dùng điện thoại và xem YouTube — là đủ điều kiện rồi. Tool chúng tôi cung cấp không cần code, không cần cài đặt phức tạp, giao diện tiếng Việt.</p>
+          <p class="text-blue-200 text-sm leading-relaxed">Học viên lớn tuổi nhất của chúng tôi là <strong class="text-white">58 tuổi</strong>, không biết gì về AI — vẫn tạo được video trong ngày học đầu tiên.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-2xl overflow-hidden cursor-pointer card-navy">
+        <div class="faq-header flex items-center justify-between p-5" onclick="toggleFaq(this.parentElement)">
+          <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-weight:600;color:#fff;font-size:0.95rem;" class="pr-4">Học xong tôi có tự làm được ngay không hay vẫn cần nhờ người?</h4>
+          <span class="faq-icon text-blue-300 text-2xl flex-shrink-0" style="font-weight:300;">+</span>
+        </div>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-blue-200 text-sm leading-relaxed">Học xong bài nào — làm được ngay bài đó. Khóa học được thiết kế theo nguyên tắc <strong class="text-white">"học đến đâu, thực hành đến đó"</strong> — không học lý thuyết suông. Sau buổi đầu tiên anh/chị đã có thể xuất ra video AI đầu tay của mình.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-2xl overflow-hidden cursor-pointer card-navy">
+        <div class="faq-header flex items-center justify-between p-5" onclick="toggleFaq(this.parentElement)">
+          <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-weight:600;color:#fff;font-size:0.95rem;" class="pr-4">AI thay đổi nhanh quá — học xong rồi lại lỗi thời không?</h4>
+          <span class="faq-icon text-blue-300 text-2xl flex-shrink-0" style="font-weight:300;">+</span>
+        </div>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-blue-200 text-sm leading-relaxed">Lo ngại này rất thực tế. Chính vì AI thay đổi nhanh nên <strong class="text-white">anh/chị cần học ngay hôm nay</strong> — để có nền tảng vững trước khi thị trường bão hòa. Chúng tôi cam kết <strong class="text-white">cập nhật nội dung miễn phí</strong> khi có tính năng AI mới quan trọng. Học viên cũ không cần trả thêm tiền.</p>
+        </div>
+      </div>
+
+      <!-- ── TỪ CHỐI VỀ THỜI ĐIỂM ── -->
+      <div class="px-5 pt-6 pb-2">
+        <p class="text-blue-400 text-xs font-bold uppercase tracking-widest">⏰ Về thời gian & thời điểm</p>
+      </div>
+
+      <div class="faq-item rounded-2xl overflow-hidden cursor-pointer card-navy">
+        <div class="faq-header flex items-center justify-between p-5" onclick="toggleFaq(this.parentElement)">
+          <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-weight:600;color:#fff;font-size:0.95rem;" class="pr-4">Tôi đang rất bận — không có thời gian học thêm?</h4>
+          <span class="faq-icon text-blue-300 text-2xl flex-shrink-0" style="font-weight:300;">+</span>
+        </div>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-blue-200 text-sm leading-relaxed mb-2">Hiểu — ai cũng bận. Nhưng đây chính là lý do anh/chị <strong class="text-white">cần học AI ngay bây giờ</strong>. Mỗi tuần bận mà không có AI hỗ trợ = anh/chị đang làm thủ công 10 giờ việc mà AI làm trong 1 giờ.</p>
+          <p class="text-blue-200 text-sm leading-relaxed">Khóa học được chia thành các video ngắn <strong class="text-white">15–20 phút</strong> — học lúc rảnh, trên xe buýt, giờ nghỉ trưa. Không cần ngồi học liên tục 3 tiếng.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-2xl overflow-hidden cursor-pointer card-navy">
+        <div class="faq-header flex items-center justify-between p-5" onclick="toggleFaq(this.parentElement)">
+          <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-weight:600;color:#fff;font-size:0.95rem;" class="pr-4">Để tháng sau mua có được không? Có còn bán không?</h4>
+          <span class="faq-icon text-blue-300 text-2xl flex-shrink-0" style="font-weight:300;">+</span>
+        </div>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-blue-200 text-sm leading-relaxed">Anh/chị có thể để tháng sau — nhưng hãy biết rằng: <strong class="text-white">mỗi ngày trì hoãn là mỗi ngày người khác đang học và đi trước anh/chị</strong>. Tài khoản Gemini Pro số lượng có hạn, giá ưu đãi này không đảm bảo còn đến tháng sau. Rủi ro lớn nhất không phải là mua — mà là <strong class="text-white">đợi đến khi quá muộn</strong>.</p>
+        </div>
+      </div>
+
+      <!-- ── TỪ CHỐI VỀ SỰ LIÊN QUAN ── -->
+      <div class="px-5 pt-6 pb-2">
+        <p class="text-blue-400 text-xs font-bold uppercase tracking-widest">🎯 Về sự phù hợp</p>
+      </div>
+
+      <div class="faq-item rounded-2xl overflow-hidden cursor-pointer card-navy">
+        <div class="faq-header flex items-center justify-between p-5" onclick="toggleFaq(this.parentElement)">
+          <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-weight:600;color:#fff;font-size:0.95rem;" class="pr-4">Video AI có áp dụng được ở Việt Nam không? Người Việt xem không?</h4>
+          <span class="faq-icon text-blue-300 text-2xl flex-shrink-0" style="font-weight:300;">+</span>
+        </div>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-blue-200 text-sm leading-relaxed">100% có. Thực ra thị trường Việt Nam đang <strong class="text-white">thiếu người làm video AI chất lượng</strong> — nên ai vào sớm sẽ có lợi thế rất lớn. TikTok, Facebook, YouTube Shorts Việt Nam đang bùng nổ nội dung AI. Khóa học và tool chúng tôi tối ưu hoàn toàn cho nội dung tiếng Việt.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-2xl overflow-hidden cursor-pointer card-navy">
+        <div class="faq-header flex items-center justify-between p-5" onclick="toggleFaq(this.parentElement)">
+          <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-weight:600;color:#fff;font-size:0.95rem;" class="pr-4">Tôi không có kênh YouTube hay TikTok — mua về để làm gì?</h4>
+          <span class="faq-icon text-blue-300 text-2xl flex-shrink-0" style="font-weight:300;">+</span>
+        </div>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-blue-200 text-sm leading-relaxed">Video AI không chỉ dùng cho kênh cá nhân. Anh/chị có thể dùng để: <strong class="text-white">làm video quảng cáo sản phẩm</strong> kinh doanh của mình, tạo nội dung cho fanpage, làm portfolio, cung cấp dịch vụ làm video cho khách hàng, hoặc đơn giản là học kỹ năng tương lai để không bị tụt hậu. Nhiều học viên không có kênh vẫn kiếm được tiền từ dịch vụ làm video AI cho doanh nghiệp.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-8">
+      <p class="text-blue-200 mb-4">Còn câu hỏi nào khác?</p>
+      <a href="http://zalo.me/84973671215" target="_blank" class="btn-zalo">
+        💬 Hỏi Trực Tiếp Qua Zalo
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 11 — FINAL CTA
+════════════════════════════════════════════════ -->
+<section class="bg-navy-dark py-16 px-4">
+  <div class="max-w-2xl mx-auto text-center">
+    <h2 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;color:#fff;font-size:clamp(1.8rem,5vw,3rem);line-height:1.1;" class="mb-4">
+      ĐÂY LÀ LÚC ANH/CHỊ<br>
+      <span class="text-grad">PHẢI QUYẾT ĐỊNH</span>
+    </h2>
+    <p class="text-blue-100 mb-6 leading-relaxed">
+      AI đang thay đổi thị trường mỗi ngày. Người bắt đầu sớm hơn sẽ có lợi thế lớn hơn.<br>
+      <strong class="text-white">Đừng để 6 tháng nữa tiếc rằng đã không bắt đầu từ hôm nay.</strong>
+    </p>
+
+    <div class="card-navy rounded-3xl p-6 mb-6 text-left" style="border:1px solid rgba(0,198,255,0.2);">
+      <h4 style="font-family:'Anton',sans-serif;color:#fff;font-size:1.1rem;" class="mb-3 text-center">ANH/CHỊ NHẬN ĐƯỢC:</h4>
+      <div class="space-y-2">
+        <div class="flex items-center gap-2"><span class="text-green-400 font-bold">✅</span><span class="text-blue-100 text-sm">Khóa học tạo video AI (trị giá 999.000đ)</span></div>
+        <div class="flex items-center gap-2"><span class="text-green-400 font-bold">✅</span><span class="text-blue-100 text-sm">Tool tạo video AI chuyên dụng (trị giá 299.000đ)</span></div>
+        <div class="flex items-center gap-2"><span class="text-green-400 font-bold">✅</span><span class="text-blue-100 text-sm">Tài khoản Gemini Pro 4 tháng (trị giá 499.000đ)</span></div>
+        <div class="flex items-center gap-2"><span class="text-green-400 font-bold">✅</span><span class="text-blue-100 text-sm">Hỗ trợ tiếng Việt qua Zalo</span></div>
+        <div class="flex items-center gap-2"><span class="text-green-400 font-bold">✅</span><span class="text-blue-100 text-sm">Bảo đảm hoàn tiền 7 ngày — không rủi ro</span></div>
+      </div>
+    </div>
+
+    <a href="#lead-form" class="btn-cta w-full block mb-4" style="padding:20px 32px;font-size:1.2rem;">
+      🚀 SỞ HỮU NGAY — BẮT ĐẦU HÔM NAY
+    </a>
+
+    <div class="flex flex-wrap justify-center gap-4 text-blue-200 text-sm">
+      <span>🔒 Thanh toán an toàn</span>
+      <span>⚡ Nhận hàng trong 15 phút</span>
+      <span>🛡️ Hoàn tiền 7 ngày</span>
+    </div>
+
+    <p class="text-blue-300 text-sm mt-6 italic">
+      P.S. Rủi ro hoàn toàn nằm ở phía chúng tôi — không phải anh/chị. Bảo đảm hoàn tiền 7 ngày, không điều kiện.
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<!-- LEAD FORM — cuối trang -->
+<section id="lead-form" class="py-10 px-4" style="background:linear-gradient(160deg,#0B1E3F 0%,#0D2B55 50%,#0B3D7A 100%);">
+  <div class="max-w-xl mx-auto">
+    <div class="text-center mb-6">
+      <div class="inline-block text-xs font-bold px-3 py-1 rounded-full mb-3 text-white"
+           style="background:linear-gradient(90deg,#00C6FF,#0072FF);">
+        🔥 CHỈ CÒN VÀI SUẤT GIÁ ƯU ĐÃI HÔM NAY
+      </div>
+      <h2 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;color:#fff;font-size:clamp(1.2rem,3vw,1.8rem);line-height:1.2;" class="mb-3">
+        ĐỂ LẠI THÔNG TIN —
+        <span class="text-grad">NHẬN TƯ VẤN MIỄN PHÍ NGAY</span>
+      </h2>
+      <p class="text-blue-200 text-sm mb-3 leading-relaxed">
+        Đừng mất thêm thời gian mò mẫm một mình. Chuyên gia VŨ TƯ AI SHOP liên hệ trong <strong class="text-white">15 phút</strong> để:
+      </p>
+      <ul class="text-left text-blue-200 text-sm space-y-1 mb-4 max-w-sm mx-auto">
+        <li class="flex items-center gap-2"><span class="text-green-400 font-bold">✓</span> Tư vấn sản phẩm phù hợp nhất với nhu cầu</li>
+        <li class="flex items-center gap-2"><span class="text-green-400 font-bold">✓</span> Giải đáp mọi thắc mắc trước khi mua</li>
+      </ul>
+    </div>
+    <div class="card-navy rounded-2xl p-6" style="border:1px solid rgba(0,198,255,0.3);">
+      <form onsubmit="handleFormSubmit(event)" class="space-y-3">
+        <div>
+          <label class="block text-blue-200 text-xs font-semibold mb-1">Họ và tên *</label>
+          <input type="text" class="form-input" placeholder="Nhập họ và tên..." required>
+        </div>
+        <div>
+          <label class="block text-blue-200 text-xs font-semibold mb-1">Số điện thoại *</label>
+          <input type="tel" class="form-input" placeholder="VD: 0912 345 678" required>
+        </div>
+        <div>
+          <label class="block text-blue-200 text-xs font-semibold mb-1">Sản phẩm quan tâm</label>
+          <select class="form-input" style="color:#fff;">
+            <option value="" style="background:#102A52;">-- Chọn sản phẩm --</option>
+            <option value="khoa-hoc" style="background:#102A52;">🎓 Khóa học tạo video AI — 599.000đ</option>
+            <option value="tool" style="background:#102A52;">🛠️ Tool tạo video AI — 99.000đ</option>
+            <option value="gemini" style="background:#102A52;">🤖 Tài khoản Gemini Pro 4 tháng — 199.000đ</option>
+            <option value="combo" style="background:#102A52;">🔥 Combo bộ 3 — 897.000đ (tiết kiệm 50%)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-cta w-full" style="font-size:1rem;padding:14px 24px;">
+          🚀 GỬI THÔNG TIN — TƯ VẤN MIỄN PHÍ NGAY
+        </button>
+        <p class="text-blue-300 text-xs text-center">🔒 Thông tin bảo mật tuyệt đối</p>
+      </form>
+      <div class="mt-4 text-center">
+        <p class="text-blue-300 text-xs mb-2">— Hoặc liên hệ ngay —</p>
+        <a href="http://zalo.me/84973671215" target="_blank" class="btn-zalo">💬 Nhắn Zalo Ngay</a>
+      </div>
+    </div>
+    <div id="form-success" class="hidden mt-4 p-5 rounded-2xl text-center" style="background:rgba(0,198,100,0.15);border:1px solid rgba(0,198,100,0.4);">
+      <div class="text-4xl mb-2">🎉</div>
+      <h3 style="font-family:'Anton',sans-serif;color:#fff;font-size:1.2rem;" class="mb-1">ĐÃ NHẬN THÔNG TIN!</h3>
+      <p class="text-green-200 text-sm">Chúng tôi sẽ liên hệ qua Zalo/điện thoại trong 15 phút!</p>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-navy-dark py-8 px-4" style="border-top:1px solid rgba(255,255,255,0.08);">
+  <div class="max-w-3xl mx-auto text-center">
+    <div class="flex items-center justify-center gap-2 mb-3">
+      <span class="text-2xl">🤖</span>
+      <span style="font-family:'Anton',sans-serif;letter-spacing:0.05em;font-size:1.2rem;color:#fff;">VŨ TƯ AI SHOP</span>
+    </div>
+    <p class="text-blue-300 text-sm mb-4">Bộ 3 vũ khí AI hoàn chỉnh cho người Việt Nam</p>
+    <div class="flex justify-center gap-6 text-sm">
+      <a href="http://zalo.me/84973671215" target="_blank" class="text-blue-300 hover:text-white transition-colors">💬 Liên hệ Zalo</a>
+      <a href="#payment" class="text-blue-300 hover:text-white transition-colors">🛒 Mua ngay</a>
+    </div>
+    <p class="text-blue-400 text-xs mt-6">© 2025 VŨ TƯ AI SHOP. Tất cả quyền được bảo lưu.</p>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════
+     STICKY CTA BAR
+════════════════════════════════════════════════ -->
+<div id="sticky-cta" class="fixed bottom-0 left-0 right-0 z-50 transform translate-y-full shadow-2xl"
+     style="background:linear-gradient(90deg,#060F20,#0B1E3F);border-top:1px solid rgba(0,198,255,0.3);">
+  <div class="px-4 py-3 flex items-center justify-between gap-3">
+    <span class="text-blue-100 text-sm font-semibold hidden sm:block">VŨ TƯ AI SHOP — Tool AI từ 99.000đ</span>
+    <div class="flex gap-2 w-full sm:w-auto">
+      <a href="http://zalo.me/84973671215" target="_blank" class="btn-zalo flex-1 sm:flex-none text-center py-3 px-4 text-sm">
+        💬 Zalo
+      </a>
+      <a href="#lead-form" class="btn-cta flex-1 sm:flex-none text-center py-3 px-4 text-sm" style="font-size:0.85rem;padding:12px 18px;">
+        🚀 ĐĂNG KÝ NGAY
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════════ -->
+<script>
+  // Sticky CTA bar sau khi scroll 400px
+  window.addEventListener('scroll', function () {
+    var bar = document.getElementById('sticky-cta');
+    if (window.scrollY > 400) {
+      bar.classList.remove('translate-y-full');
+    } else {
+      bar.classList.add('translate-y-full');
+    }
+  });
+
+  // FAQ accordion toggle
+  function toggleFaq(item) {
+    document.querySelectorAll('.faq-item').forEach(function (el) {
+      if (el !== item) el.classList.remove('open');
+    });
+    item.classList.toggle('open');
+  }
+
+  // Form submit handler
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    var form = e.target;
+    form.style.display = 'none';
+    document.getElementById('form-success').classList.remove('hidden');
+    // Mở Zalo sau 1.5s để hỗ trợ tư vấn
+    setTimeout(function () {
+      window.open('http://zalo.me/84973671215', '_blank');
+    }, 1500);
+  }
+</script>
+
+</body>
+</html>
