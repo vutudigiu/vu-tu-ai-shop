@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tự Động Trả Lời Comment Facebook Bằng Claude Code — VŨ TƯ AI SHOP</title>
+  <meta name="description" content="Full quy trình tự động trả lời comment Facebook cá nhân bằng Claude AI — tiết kiệm hàng giờ mỗi ngày. Chỉ 55.000đ.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tự Động Trả Lời Comment Facebook Bằng Claude Code">
+  <meta property="og:description" content="Đăng bài viral, nghìn comment — để AI tự động trả lời thay bạn. Full quy trình chỉ 55.000đ.">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts — Anton (tiêu đề) + Be Vietnam Pro (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy1: '#0B1E3F',
+            navy2: '#102A52',
+            navy3: '#1A3A6B',
+            navy4: '#0D2440',
+          },
+          fontFamily: {
+            heading: ['Anton', 'sans-serif'],
+            body:    ['"Be Vietnam Pro"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { font-family: 'Be Vietnam Pro', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Anton', sans-serif; letter-spacing: 0.02em; }
+    html { scroll-behavior: smooth; }
+
+    /* ── Navy SOLID backgrounds ── */
+    .bg-navy        { background: #0E1F40; }
+    .bg-navy-mid    { background: #0A1830; }
+    .bg-navy-dark   { background: #071428; }
+    .bg-navy-light  { background: #122454; }
+
+    /* ── Card kính ── */
+    .card-glass {
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.6);
+    }
+    .card-navy {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    /* ── Divider ── */
+    .divider-dash { border-top: 2px dashed rgba(255,255,255,0.2); }
+
+    /* ══════════════════════════════════
+       NÚT CTA — GRADIENT NHẤP NHÁY
+    ══════════════════════════════════ */
+    .btn-cta {
+      background: linear-gradient(90deg, #00C6FF, #0072FF, #00C6FF);
+      background-size: 200% auto;
+      color: #fff;
+      font-family: 'Anton', sans-serif;
+      letter-spacing: 0.05em;
+      font-size: 1.1rem;
+      padding: 16px 36px;
+      border-radius: 50px;
+      display: inline-block;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 20px rgba(0,198,255,0.5), 0 0 40px rgba(0,114,255,0.3);
+      animation: shimmer 2.5s linear infinite, glowPulse 2s ease-in-out infinite;
+      transition: transform 0.2s;
+    }
+    .btn-cta:hover { transform: translateY(-3px) scale(1.02); }
+
+    @keyframes shimmer {
+      0%   { background-position: 200% center; }
+      100% { background-position: -200% center; }
+    }
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 20px rgba(0,198,255,0.5), 0 0 40px rgba(0,114,255,0.3); }
+      50%       { box-shadow: 0 0 35px rgba(0,198,255,0.9), 0 0 70px rgba(0,114,255,0.6); }
+    }
+
+    /* Nút Zalo phụ */
+    .btn-zalo {
+      background: transparent;
+      animation: zaloGlow 1.5s ease-in-out infinite;
+      color: #fff;
+      font-family: 'Anton', sans-serif;
+      letter-spacing: 0.05em;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: 50px;
+      border: 2px solid rgba(255,255,255,0.5);
+      display: inline-block;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+    .btn-zalo:hover { background: rgba(255,255,255,0.12); border-color: #FFD700; }
+    @keyframes zaloGlow {
+      0%, 100% { color: #FFD700; border-color: #FFD700; box-shadow: 0 0 8px rgba(255,215,0,0.4); }
+      50% { color: #FFA500; border-color: #FFA500; box-shadow: 0 0 20px rgba(255,165,0,0.7); }
+    }
+    .btn-telegram-pulse {
+      animation: telegramPulse 1.4s ease-in-out infinite;
+    }
+    @keyframes telegramPulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 8px rgba(34,158,217,0.5); }
+      50% { transform: scale(1.04); box-shadow: 0 0 22px rgba(34,158,217,0.9); }
+    }
+
+    /* ── Fade-in ── */
+    .fade-in { animation: fadeIn 0.8s ease-out; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Badge nhấp nháy ── */
+    @keyframes badgePulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0,198,255,0.6); }
+      50%       { box-shadow: 0 0 0 10px rgba(0,198,255,0); }
+    }
+    .badge-pulse { animation: badgePulse 2s infinite; }
+
+    /* ── FAQ ── */
+    .faq-answer { display: none; }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.25s; display: inline-block; }
+
+    /* ── Product card hover ── */
+    .product-card { transition: transform 0.25s, box-shadow 0.25s; }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,198,255,0.25);
+    }
+
+    /* ── Sticky bar ── */
+    #sticky-cta { transition: transform 0.3s ease; }
+
+    /* ── Lead form section ── */
+    .form-input {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 2px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-input::placeholder { color: rgba(255,255,255,0.4); }
+    .form-input:focus { border-color: #00C6FF; }
+
+    /* Gradient text */
+    .text-grad {
+      background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 3s linear infinite;
+    }
+
+    /* Stats gradient number */
+    .stat-num {
+      background: linear-gradient(135deg, #00C6FF, #38BFFF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+
+<body class="bg-navy">
+
+<!-- ═══════════════════════════════════════════════
+     STICKY HEADER
+════════════════════════════════════════════════ -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-navy-dark shadow-2xl" style="border-bottom:1px solid rgba(255,255,255,0.1);">
+  <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <span class="text-2xl">🤖</span>
+      <span style="font-family:'Anton',sans-serif;letter-spacing:0.05em;font-size:1.2rem;color:#fff;">VŨ TƯ AI SHOP</span>
+    </div>
+    <a href="#lead-form" class="btn-cta" style="padding:10px 22px;font-size:0.9rem;">
+      Nhận Ngay
+    </a>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 1 — HERO
+════════════════════════════════════════════════ -->
+<section class="bg-navy pt-28 pb-16 px-4">
+  <div class="max-w-3xl mx-auto text-center fade-in">
+
+    <!-- Avatar người sáng lập — vị trí trên cùng -->
+    <div class="flex flex-col items-center mb-6">
+      <div class="relative inline-block mb-3">
+        <img
+          src="avatar.jpg"
+          alt="Vũ Thị Tư — Người sáng lập VŨ TƯ AI SHOP"
+          class="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover object-top"
+          style="border:3px solid #00C6FF;box-shadow:0 0 25px rgba(0,198,255,0.5);"
+          onerror="this.style.display='none';"
+        />
+        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap text-white text-xs font-bold px-3 py-1 rounded-full"
+             style="background:linear-gradient(90deg,#00C6FF,#0072FF);">
+          ✓ KOL AI Go Global
+        </div>
+      </div>
+      <p class="text-blue-200 text-sm font-semibold tracking-wide">VŨ THỊ TƯ — Chuyên gia tự động hóa bằng AI</p>
+    </div>
+
+    <!-- Pre-headline badge -->
+    <div class="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold mb-4 badge-pulse"
+         style="background:rgba(0,198,255,0.15);border:1px solid rgba(0,198,255,0.4);color:#00C6FF;">
+      <span class="w-2 h-2 rounded-full inline-block" style="background:#00C6FF;"></span>
+      Dành cho anh/chị đang xây kênh Facebook cá nhân
+    </div>
+
+    <!-- Headline -->
+    <h1 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;font-size:clamp(1.6rem,5vw,2.6rem);line-height:1.15;color:#fff;text-shadow:0 0 30px rgba(0,198,255,0.3);" class="mb-2">
+      TỰ ĐỘNG TRẢ LỜI COMMENT FACEBOOK<br>
+      <span class="text-grad">BẰNG CLAUDE CODE</span>
+    </h1>
+
+    <!-- Subheadline -->
+    <p class="text-blue-100 text-sm md:text-base font-medium mb-1 leading-relaxed">
+      Đăng bài viral, nghìn lượt tương tác — không cần ngồi canh máy trả lời từng comment nữa
+    </p>
+    <p class="text-blue-200 text-xs md:text-sm mb-6">
+      Full quy trình dùng AI Claude tự động tương tác với bạn bè — <strong class="text-white">tiết kiệm hàng giờ mỗi ngày</strong>
+    </p>
+
+    <!-- CTA primary -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+      <a href="#payment" class="btn-cta w-full sm:w-auto">
+        ☕ MỜI VŨ TƯ 1 LY CAFE 55.000Đ
+      </a>
+      <a href="http://zalo.me/84973671215" target="_blank" class="btn-zalo w-full sm:w-auto">
+        💬 Hỏi Qua Zalo
+      </a>
+    </div>
+
+    <!-- Trust indicators -->
+    <div class="flex flex-wrap justify-center gap-4 text-blue-200 text-sm font-medium">
+      <span>✅ Đã có nhiều anh/chị áp dụng thành công</span>
+      <span>⭐ Đánh giá 4.9/5</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 2 — PROBLEM (Nỗi đau)
+════════════════════════════════════════════════ -->
+<section class="bg-navy-mid py-16 px-4">
+  <div class="max-w-3xl mx-auto">
+    <div class="card-navy rounded-3xl p-8 md:p-10">
+      <h2 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;color:#fff;font-size:1.8rem;" class="text-center mb-6">
+        ANH/CHỊ CÓ ĐANG GẶP TÌNH TRẠNG NÀY KHÔNG?
+      </h2>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3 p-4 rounded-2xl" style="background:rgba(255,80,80,0.1);border:1px solid rgba(255,80,80,0.2);">
+          <span class="text-2xl flex-shrink-0">😩</span>
+          <p class="text-blue-100">Bạn rất háo hức đăng bài, ý tưởng mới lên Facebook cá nhân — nhưng bài viết lại có <strong class="text-white">rất nhiều lượt tương tác và bình luận</strong>, khiến việc trả lời từng comment tốn khá nhiều thời gian trong ngày</p>
+        </div>
+        <div class="flex items-start gap-3 p-4 rounded-2xl" style="background:rgba(255,80,80,0.1);border:1px solid rgba(255,80,80,0.2);">
+          <span class="text-2xl flex-shrink-0">⏰</span>
+          <p class="text-blue-100">Bạn đang muốn xây kênh Facebook nghiêm túc, nhưng cứ phải <strong class="text-white">ngồi canh điện thoại cả ngày</strong> để không bỏ lỡ bình luận nào của bạn bè</p>
+        </div>
+        <div class="flex items-start gap-3 p-4 rounded-2xl" style="background:rgba(255,80,80,0.1);border:1px solid rgba(255,80,80,0.2);">
+          <span class="text-2xl flex-shrink-0">😤</span>
+          <p class="text-blue-100">Trả lời chậm khiến bạn bè cảm thấy <strong class="text-white">không được quan tâm</strong>, tương tác giảm dần, bài đăng cũng vì thế mà kém hiệu quả hơn</p>
+        </div>
+      </div>
+      <p class="text-center text-blue-300 mt-6 italic text-sm">
+        → Chỉ cần một quy trình tự động đúng cách, anh/chị có thể lấy lại hàng giờ đồng hồ mỗi ngày.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 3 — SOLUTION (Giới thiệu)
+════════════════════════════════════════════════ -->
+<section class="bg-navy py-16 px-4">
+  <div class="max-w-3xl mx-auto text-center">
+    <p class="text-blue-300 font-semibold uppercase tracking-widest text-sm mb-3">Giải pháp</p>
+    <h2 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;color:#fff;font-size:clamp(1.6rem,5vw,2.4rem);" class="mb-4">
+      GIỚI THIỆU: <span class="text-grad">QUY TRÌNH TỰ ĐỘNG TRẢ LỜI COMMENT FACEBOOK BẰNG CLAUDE CODE</span>
+    </h2>
+    <p class="text-blue-100 text-lg mb-10">
+      Vũ Tư đã dùng chính AI của <strong class="text-white">Claude</strong> để xây dựng quy trình tự động tương tác và trả lời comment thay bạn — áp dụng ngay trên Facebook cá nhân
+    </p>
+
+    <!-- 1 sản phẩm duy nhất -->
+    <div class="max-w-md mx-auto">
+      <div class="product-card card-glass rounded-3xl p-8 text-left relative overflow-hidden" style="border:2px solid #00C6FF;">
+        <div class="absolute top-0 left-0 right-0 text-white text-xs font-bold py-1 text-center" style="background:linear-gradient(90deg,#00C6FF,#0072FF);">
+          ☕ CHỈ 1 LY CAFE
+        </div>
+        <div class="text-5xl mb-4 mt-6 text-center">🤖</div>
+        <div class="inline-block text-xs font-bold px-3 py-1 rounded-full mb-3" style="background:#EEF2FF;color:#3730A3;">FULL QUY TRÌNH</div>
+        <h3 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#0B1E3F;font-size:1.3rem;" class="mb-2">TỰ ĐỘNG TRẢ LỜI COMMENT FACEBOOK</h3>
+        <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+          Hướng dẫn từng bước dùng Claude Code để AI tự động đọc và trả lời bình luận trên bài đăng Facebook cá nhân của bạn — đúng giọng văn, đúng ngữ cảnh, không bị "máy móc".
+        </p>
+        <div class="divider-dash mb-4" style="border-color:rgba(11,30,63,0.15);"></div>
+        <div class="flex items-end gap-2 justify-center">
+          <span class="text-gray-400 line-through text-sm">150.000đ</span>
+          <span style="font-family:'Anton',sans-serif;font-size:2rem;color:#0072FF;">55.000đ</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <a href="#payment" class="btn-cta">
+        🎯 NHẬN QUY TRÌNH NGAY
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 4 — BENEFITS (Lợi ích)
+════════════════════════════════════════════════ -->
+<section class="bg-navy-mid py-16 px-4">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-10">
+      <h2 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;color:#fff;font-size:clamp(1.6rem,4vw,2.4rem);" class="mb-3">
+        KHI SỞ HỮU QUY TRÌNH NÀY, ANH/CHỊ SẼ...
+      </h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="card-navy rounded-2xl p-5 flex items-start gap-4">
+        <span class="text-3xl flex-shrink-0">⚡</span>
+        <div>
+          <h4 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#fff;font-size:1rem;" class="mb-1">TRẢ LỜI COMMENT TỰC ĐỘNG 24/7</h4>
+          <p class="text-blue-200 text-sm">Bài đăng viral cỡ nào cũng không lo bỏ sót bình luận nào của bạn bè</p>
+        </div>
+      </div>
+      <div class="card-navy rounded-2xl p-5 flex items-start gap-4">
+        <span class="text-3xl flex-shrink-0">⏳</span>
+        <div>
+          <h4 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#fff;font-size:1rem;" class="mb-1">TIẾT KIỆM HÀNG GIỜ MỖI NGÀY</h4>
+          <p class="text-blue-200 text-sm">Thời gian rảnh ra để tập trung sáng tạo nội dung mới thay vì ngồi gõ trả lời</p>
+        </div>
+      </div>
+      <div class="card-navy rounded-2xl p-5 flex items-start gap-4">
+        <span class="text-3xl flex-shrink-0">🤝</span>
+        <div>
+          <h4 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#fff;font-size:1rem;" class="mb-1">TĂNG TƯƠNG TÁC VỚI BẠN BÈ</h4>
+          <p class="text-blue-200 text-sm">Phản hồi nhanh giúp bài đăng được Facebook ưu tiên hiển thị nhiều hơn</p>
+        </div>
+      </div>
+      <div class="card-navy rounded-2xl p-5 flex items-start gap-4">
+        <span class="text-3xl flex-shrink-0">🎯</span>
+        <div>
+          <h4 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#fff;font-size:1rem;" class="mb-1">GIỌNG VĂN TỰ NHIÊN, ĐÚNG PHONG CÁCH</h4>
+          <p class="text-blue-200 text-sm">AI trả lời theo văn phong của bạn, không bị lộ là "trả lời tự động"</p>
+        </div>
+      </div>
+      <div class="card-navy rounded-2xl p-5 flex items-start gap-4">
+        <span class="text-3xl flex-shrink-0">📱</span>
+        <div>
+          <h4 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#fff;font-size:1rem;" class="mb-1">DỄ CÀI ĐẶT — KHÔNG CẦN BIẾT CODE</h4>
+          <p class="text-blue-200 text-sm">Làm theo hướng dẫn từng bước, ai cũng cài đặt được trong lần đầu</p>
+        </div>
+      </div>
+      <div class="card-navy rounded-2xl p-5 flex items-start gap-4">
+        <span class="text-3xl flex-shrink-0">🚀</span>
+        <div>
+          <h4 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#fff;font-size:1rem;" class="mb-1">XÂY KÊNH FACEBOOK CHUYÊN NGHIỆP HƠN</h4>
+          <p class="text-blue-200 text-sm">Vận hành như một "page thật sự" dù chỉ có một mình bạn quản lý</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 5 — HOW IT WORKS (3 bước)
+════════════════════════════════════════════════ -->
+<section class="bg-navy py-16 px-4">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;color:#fff;font-size:clamp(1.6rem,4vw,2.4rem);" class="mb-2">
+      QUY TRÌNH HOẠT ĐỘNG NHƯ THẾ NÀO?
+    </h2>
+    <p class="text-blue-200 mb-10">Chỉ 3 bước đơn giản để bắt đầu</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="card-navy rounded-3xl p-6">
+        <div class="w-14 h-14 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4"
+             style="background:linear-gradient(135deg,#00C6FF,#0072FF);font-family:'Anton',sans-serif;">1</div>
+        <h3 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#fff;font-size:1.1rem;" class="mb-2">CÀI ĐẶT CLAUDE CODE</h3>
+        <p class="text-blue-200 text-sm">Làm theo hướng dẫn cầm tay chỉ việc để kết nối Claude Code với tài khoản Facebook cá nhân.</p>
+      </div>
+      <div class="card-navy rounded-3xl p-6">
+        <div class="w-14 h-14 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4"
+             style="background:linear-gradient(135deg,#00C6FF,#0072FF);font-family:'Anton',sans-serif;">2</div>
+        <h3 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#fff;font-size:1.1rem;" class="mb-2">THIẾT LẬP PHONG CÁCH TRẢ LỜI</h3>
+        <p class="text-blue-200 text-sm">Nhập vài mẫu câu quen thuộc để AI học đúng giọng văn của bạn.</p>
+      </div>
+      <div class="card-navy rounded-3xl p-6">
+        <div class="w-14 h-14 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4"
+             style="background:linear-gradient(135deg,#00C6FF,#0072FF);font-family:'Anton',sans-serif;">3</div>
+        <h3 style="font-family:'Anton',sans-serif;letter-spacing:0.02em;color:#fff;font-size:1.1rem;" class="mb-2">ĐĂNG BÀI & ĐỂ AI LO PHẦN CÒN LẠI</h3>
+        <p class="text-blue-200 text-sm">Mỗi bình luận mới sẽ được AI tự động đọc hiểu và trả lời ngay lập tức.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 6 — SOCIAL PROOF (Testimonials)
+════════════════════════════════════════════════ -->
+<section class="bg-navy-mid py-16 px-4">
+  <div class="max-w-3xl mx-auto">
+    <h2 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;color:#fff;font-size:clamp(1.6rem,4vw,2.4rem);" class="text-center mb-2">
+      KHÁCH HÀNG NÓI GÌ?
+    </h2>
+    <p class="text-blue-200 text-center mb-8">Những anh/chị đã áp dụng quy trình này vào kênh Facebook cá nhân</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+      <div class="card-glass rounded-3xl p-6">
+        <div class="flex mb-3"><span class="text-yellow-400 text-lg">⭐⭐⭐⭐⭐</span></div>
+        <p class="text-gray-700 text-sm italic mb-4 leading-relaxed">
+          "Bài đăng của mình hay có vài trăm comment, trước đây trả lời muốn mỏi tay. Từ khi dùng quy trình của Vũ Tư, <strong>AI trả lời gần như ngay lập tức</strong> mà vẫn đúng chất giọng của mình."
+        </p>
+        <p class="font-bold text-navy1 text-sm">— Minh Hùng, 28 tuổi</p>
+        <p class="text-gray-400 text-xs">Hà Nội</p>
+      </div>
+      <div class="card-glass rounded-3xl p-6">
+        <div class="flex mb-3"><span class="text-yellow-400 text-lg">⭐⭐⭐⭐⭐</span></div>
+        <p class="text-gray-700 text-sm italic mb-4 leading-relaxed">
+          "Chỉ 55k mà tiết kiệm được cả tiếng đồng hồ mỗi ngày. Hướng dẫn rất dễ làm theo, <strong>không cần biết code</strong> vẫn cài được."
+        </p>
+        <p class="font-bold text-navy1 text-sm">— Thu Hương</p>
+        <p class="text-gray-400 text-xs">TP.HCM</p>
+      </div>
+      <div class="card-glass rounded-3xl p-6">
+        <div class="flex mb-3"><span class="text-yellow-400 text-lg">⭐⭐⭐⭐⭐</span></div>
+        <p class="text-gray-700 text-sm italic mb-4 leading-relaxed">
+          "Bạn bè bình luận là được trả lời liền, không ai biết là AI trả lời cả. <strong>Tương tác bài đăng tăng hẳn.</strong>"
+        </p>
+        <p class="font-bold text-navy1 text-sm">— Quang Đại</p>
+        <p class="text-gray-400 text-xs">Đang xây kênh Facebook cá nhân</p>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="card-navy rounded-3xl p-6">
+      <div class="grid grid-cols-3 gap-4 text-center">
+        <div>
+          <div class="stat-num text-3xl" style="font-family:'Anton',sans-serif;">55k</div>
+          <div class="text-blue-200 text-sm">Chi phí 1 lần</div>
+        </div>
+        <div>
+          <div class="stat-num text-3xl" style="font-family:'Anton',sans-serif;">4.9/5</div>
+          <div class="text-blue-200 text-sm">Điểm đánh giá</div>
+        </div>
+        <div>
+          <div class="stat-num text-3xl" style="font-family:'Anton',sans-serif;">24/7</div>
+          <div class="text-blue-200 text-sm">AI tự động trả lời</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 8 — PAYMENT (Thanh toán)
+════════════════════════════════════════════════ -->
+<section id="payment" class="bg-navy py-16 px-4">
+  <div class="max-w-3xl mx-auto">
+    <h2 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;color:#fff;font-size:clamp(1.6rem,4vw,2.4rem);" class="text-center mb-2">
+      MỜI VŨ TƯ 1 LY CAFE — NHẬN NGAY QUY TRÌNH
+    </h2>
+    <p class="text-blue-200 text-center mb-10">Quét mã QR — xác nhận tức thì — nhận sản phẩm trong 15 phút</p>
+
+    <div class="max-w-sm mx-auto">
+      <div class="card-glass rounded-3xl p-8 text-center product-card" style="border:2px solid #00C6FF;">
+        <div class="text-4xl mb-3">🤖</div>
+        <h3 style="font-family:'Anton',sans-serif;color:#0B1E3F;font-size:1.1rem;" class="mb-1">QUY TRÌNH TỰ ĐỘNG TRẢ LỜI COMMENT FACEBOOK BẰNG CLAUDE CODE</h3>
+        <p class="text-gray-500 text-xs mb-4">Full hướng dẫn — áp dụng ngay trong ngày</p>
+        <div class="mb-4">
+          <span class="text-gray-400 line-through text-sm block">150.000đ</span>
+          <span style="font-family:'Anton',sans-serif;font-size:2.2rem;color:#0072FF;">55.000đ</span>
+        </div>
+        <img src="https://img.vietqr.io/image/MB-0973671215-compact2.png?amount=55000&addInfo=AI%20FB&accountName=VU%20THI%20TU"
+          alt="QR thanh toán quy trình tự động trả lời comment Facebook — MB Bank"
+          class="w-56 h-56 mx-auto rounded-xl mb-4" loading="lazy"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div style="display:none" class="w-56 h-56 mx-auto bg-gray-100 rounded-xl items-center justify-center text-gray-400 text-xs mb-4">[QR khi có mạng]</div>
+        <div class="bg-blue-50 rounded-xl p-4 text-left text-sm mb-4">
+          <p class="font-semibold text-gray-700 mb-2">Chuyển khoản thủ công:</p>
+          <p class="text-gray-600">🏦 Ngân hàng: <strong>MB Bank</strong></p>
+          <p class="text-gray-600">📋 Số TK: <strong>0973671215</strong></p>
+          <p class="text-gray-600">👤 Chủ TK: <strong>VU THI TU</strong></p>
+          <p class="text-gray-600">💰 Số tiền: <strong>55.000đ</strong></p>
+          <p class="text-gray-600">💬 Nội dung: <strong>AI FB</strong></p>
+        </div>
+        <p class="text-gray-500 text-xs mb-4">Quét bằng bất kỳ app ngân hàng nào • 44+ ngân hàng Việt Nam hỗ trợ</p>
+        <a href="http://zalo.me/84973671215" target="_blank"
+           class="flex items-center justify-center gap-2 w-full rounded-xl text-sm font-bold py-3 btn-telegram-pulse"
+           style="background:linear-gradient(90deg,#0072FF,#00C6FF);color:#fff;">
+          💬 Liên Hệ Admin Nhận Sản Phẩm
+        </a>
+      </div>
+    </div>
+
+    <!-- Sau thanh toán -->
+    <div class="mt-6 card-navy rounded-2xl p-5 text-center max-w-sm mx-auto">
+      <p class="text-white font-semibold mb-2">📲 Sau khi thanh toán xong:</p>
+      <p class="text-blue-200 text-sm mb-3">Nhắn tin xác nhận qua Zalo — anh/chị nhận quy trình trong <strong class="text-white">15 phút</strong></p>
+      <a href="http://zalo.me/84973671215" target="_blank" class="btn-cta" style="font-size:1rem;padding:14px 28px;">
+        💬 NHẮN ZALO XÁC NHẬN THANH TOÁN
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 10 — FAQ
+════════════════════════════════════════════════ -->
+<section class="bg-navy py-16 px-4">
+  <div class="max-w-3xl mx-auto">
+    <h2 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;color:#fff;font-size:clamp(1.6rem,4vw,2.4rem);" class="text-center mb-8">
+      CÂU HỎI THƯỜNG GẶP
+    </h2>
+    <div class="space-y-3" id="faq-container">
+
+      <div class="faq-item rounded-2xl overflow-hidden cursor-pointer card-navy">
+        <div class="faq-header flex items-center justify-between p-5" onclick="toggleFaq(this.parentElement)">
+          <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-weight:600;color:#fff;font-size:0.95rem;" class="pr-4">Tôi không biết gì về code — có cài đặt được không?</h4>
+          <span class="faq-icon text-blue-300 text-2xl flex-shrink-0" style="font-weight:300;">+</span>
+        </div>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-blue-200 text-sm leading-relaxed">Được. Quy trình có hướng dẫn từng bước, cầm tay chỉ việc — anh/chị chỉ cần làm theo đúng thứ tự là xong, không cần biết lập trình.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-2xl overflow-hidden cursor-pointer card-navy">
+        <div class="faq-header flex items-center justify-between p-5" onclick="toggleFaq(this.parentElement)">
+          <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-weight:600;color:#fff;font-size:0.95rem;" class="pr-4">AI trả lời có bị lộ là "trả lời tự động" không?</h4>
+          <span class="faq-icon text-blue-300 text-2xl flex-shrink-0" style="font-weight:300;">+</span>
+        </div>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-blue-200 text-sm leading-relaxed">Không. Quy trình hướng dẫn thiết lập để AI học đúng văn phong, cách xưng hô quen thuộc của bạn — bạn bè sẽ thấy phản hồi rất tự nhiên.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-2xl overflow-hidden cursor-pointer card-navy">
+        <div class="faq-header flex items-center justify-between p-5" onclick="toggleFaq(this.parentElement)">
+          <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-weight:600;color:#fff;font-size:0.95rem;" class="pr-4">Sau khi thanh toán, tôi nhận quy trình bằng cách nào?</h4>
+          <span class="faq-icon text-blue-300 text-2xl flex-shrink-0" style="font-weight:300;">+</span>
+        </div>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-blue-200 text-sm leading-relaxed">Sau khi chuyển khoản, anh/chị nhắn tin xác nhận qua Zalo với nội dung chuyển khoản là "AI FB". Chúng tôi giao sản phẩm trong vòng 15 phút.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-2xl overflow-hidden cursor-pointer card-navy">
+        <div class="faq-header flex items-center justify-between p-5" onclick="toggleFaq(this.parentElement)">
+          <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-weight:600;color:#fff;font-size:0.95rem;" class="pr-4">Giá chỉ 55.000đ — có thực sự đầy đủ không?</h4>
+          <span class="faq-icon text-blue-300 text-2xl flex-shrink-0" style="font-weight:300;">+</span>
+        </div>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-blue-200 text-sm leading-relaxed">Đầy đủ. Giá 55.000đ chỉ tương đương 1 ly cà phê — mục tiêu là để nhiều anh/chị tiếp cận được quy trình hơn, thay vì đặt giá cao. Nội dung vẫn là full quy trình đã được Vũ Tư áp dụng thực tế.</p>
+        </div>
+      </div>
+
+      <div class="faq-item rounded-2xl overflow-hidden cursor-pointer card-navy">
+        <div class="faq-header flex items-center justify-between p-5" onclick="toggleFaq(this.parentElement)">
+          <h4 style="font-family:'Be Vietnam Pro',sans-serif;font-weight:600;color:#fff;font-size:0.95rem;" class="pr-4">Tôi chỉ dùng Facebook cá nhân, không phải fanpage — có áp dụng được không?</h4>
+          <span class="faq-icon text-blue-300 text-2xl flex-shrink-0" style="font-weight:300;">+</span>
+        </div>
+        <div class="faq-answer px-5 pb-5">
+          <p class="text-blue-200 text-sm leading-relaxed">Có. Quy trình này được thiết kế riêng cho Facebook cá nhân — dành cho anh/chị đang xây kênh hoặc đơn giản là đăng bài thường xuyên và muốn tương tác tốt hơn với bạn bè.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-8">
+      <p class="text-blue-200 mb-4">Còn câu hỏi nào khác?</p>
+      <a href="http://zalo.me/84973671215" target="_blank" class="btn-zalo">
+        💬 Hỏi Trực Tiếp Qua Zalo
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 11 — FINAL CTA
+════════════════════════════════════════════════ -->
+<section class="bg-navy-dark py-16 px-4">
+  <div class="max-w-2xl mx-auto text-center">
+    <h2 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;color:#fff;font-size:clamp(1.8rem,5vw,3rem);line-height:1.1;" class="mb-4">
+      ĐỪNG ĐỂ COMMENT<br>
+      <span class="text-grad">CHIẾM HẾT THỜI GIAN CỦA BẠN</span>
+    </h2>
+    <p class="text-blue-100 mb-6 leading-relaxed">
+      Mỗi giờ ngồi trả lời comment là một giờ bạn có thể dùng để tạo nội dung mới hoặc dành cho việc khác.<br>
+      <strong class="text-white">Chỉ 55.000đ để AI làm thay bạn phần việc đó, mãi mãi.</strong>
+    </p>
+
+    <a href="#payment" class="btn-cta w-full block mb-4" style="padding:20px 32px;font-size:1.2rem;">
+      ☕ MỜI CAFE & NHẬN QUY TRÌNH NGAY
+    </a>
+
+    <div class="flex flex-wrap justify-center gap-4 text-blue-200 text-sm">
+      <span>🔒 Thanh toán an toàn</span>
+      <span>⚡ Nhận hàng trong 15 phút</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<!-- LEAD FORM — cuối trang -->
+<section id="lead-form" class="py-10 px-4" style="background:linear-gradient(160deg,#0B1E3F 0%,#0D2B55 50%,#0B3D7A 100%);">
+  <div class="max-w-xl mx-auto">
+    <div class="text-center mb-6">
+      <div class="inline-block text-xs font-bold px-3 py-1 rounded-full mb-3 text-white"
+           style="background:linear-gradient(90deg,#00C6FF,#0072FF);">
+        ☕ CHỈ 55.000Đ — MỜI VŨ TƯ 1 LY CAFE
+      </div>
+      <h2 style="font-family:'Anton',sans-serif;letter-spacing:0.03em;color:#fff;font-size:clamp(1.2rem,3vw,1.8rem);line-height:1.2;" class="mb-3">
+        ĐỂ LẠI THÔNG TIN —
+        <span class="text-grad">NHẬN TƯ VẤN MIỄN PHÍ NGAY</span>
+      </h2>
+      <p class="text-blue-200 text-sm mb-3 leading-relaxed">
+        Đừng mất thêm thời gian mò mẫm một mình. Vũ Tư liên hệ trong <strong class="text-white">15 phút</strong> để:
+      </p>
+      <ul class="text-left text-blue-200 text-sm space-y-1 mb-4 max-w-sm mx-auto">
+        <li class="flex items-center gap-2"><span class="text-green-400 font-bold">✓</span> Hướng dẫn cài đặt Claude Code kết nối Facebook</li>
+        <li class="flex items-center gap-2"><span class="text-green-400 font-bold">✓</span> Giải đáp mọi thắc mắc trước khi mua</li>
+      </ul>
+    </div>
+    <div class="card-navy rounded-2xl p-6" style="border:1px solid rgba(0,198,255,0.3);">
+      <form onsubmit="handleFormSubmit(event)" class="space-y-3">
+        <div>
+          <label class="block text-blue-200 text-xs font-semibold mb-1">Họ và tên *</label>
+          <input type="text" class="form-input" placeholder="Nhập họ và tên..." required>
+        </div>
+        <div>
+          <label class="block text-blue-200 text-xs font-semibold mb-1">Số điện thoại *</label>
+          <input type="tel" class="form-input" placeholder="VD: 0912 345 678" required>
+        </div>
+        <button type="submit" class="btn-cta w-full" style="font-size:1rem;padding:14px 24px;">
+          ☕ GỬI THÔNG TIN — NHẬN QUY TRÌNH NGAY
+        </button>
+        <p class="text-blue-300 text-xs text-center">🔒 Thông tin bảo mật tuyệt đối</p>
+      </form>
+      <div class="mt-4 text-center">
+        <p class="text-blue-300 text-xs mb-2">— Hoặc liên hệ ngay —</p>
+        <a href="http://zalo.me/84973671215" target="_blank" class="btn-zalo">💬 Nhắn Zalo Ngay</a>
+      </div>
+    </div>
+    <div id="form-success" class="hidden mt-4 p-5 rounded-2xl text-center" style="background:rgba(0,198,100,0.15);border:1px solid rgba(0,198,100,0.4);">
+      <div class="text-4xl mb-2">🎉</div>
+      <h3 style="font-family:'Anton',sans-serif;color:#fff;font-size:1.2rem;" class="mb-1">ĐÃ NHẬN THÔNG TIN!</h3>
+      <p class="text-green-200 text-sm">Chúng tôi sẽ liên hệ qua Zalo/điện thoại trong 15 phút!</p>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-navy-dark py-8 px-4" style="border-top:1px solid rgba(255,255,255,0.08);">
+  <div class="max-w-3xl mx-auto text-center">
+    <div class="flex items-center justify-center gap-2 mb-3">
+      <span class="text-2xl">🤖</span>
+      <span style="font-family:'Anton',sans-serif;letter-spacing:0.05em;font-size:1.2rem;color:#fff;">VŨ TƯ AI SHOP</span>
+    </div>
+    <p class="text-blue-300 text-sm mb-4">Quy trình tự động trả lời comment Facebook bằng Claude Code</p>
+    <div class="flex justify-center gap-6 text-sm">
+      <a href="http://zalo.me/84973671215" target="_blank" class="text-blue-300 hover:text-white transition-colors">💬 Liên hệ Zalo</a>
+      <a href="#payment" class="text-blue-300 hover:text-white transition-colors">🛒 Mua ngay</a>
+    </div>
+    <p class="text-blue-400 text-xs mt-6">© 2026 VŨ TƯ AI SHOP. Tất cả quyền được bảo lưu.</p>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════
+     STICKY CTA BAR
+════════════════════════════════════════════════ -->
+<div id="sticky-cta" class="fixed bottom-0 left-0 right-0 z-50 transform translate-y-full shadow-2xl"
+     style="background:linear-gradient(90deg,#060F20,#0B1E3F);border-top:1px solid rgba(0,198,255,0.3);">
+  <div class="px-4 py-3 flex items-center justify-between gap-3">
+    <span class="text-blue-100 text-sm font-semibold hidden sm:block">Tự động trả lời comment FB — chỉ 55.000đ</span>
+    <div class="flex gap-2 w-full sm:w-auto">
+      <a href="http://zalo.me/84973671215" target="_blank" class="btn-zalo flex-1 sm:flex-none text-center py-3 px-4 text-sm">
+        💬 Zalo
+      </a>
+      <a href="#payment" class="btn-cta flex-1 sm:flex-none text-center py-3 px-4 text-sm" style="font-size:0.85rem;padding:12px 18px;">
+        ☕ NHẬN NGAY
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════════ -->
+<script>
+  // Sticky CTA bar sau khi scroll 400px
+  window.addEventListener('scroll', function () {
+    var bar = document.getElementById('sticky-cta');
+    if (window.scrollY > 400) {
+      bar.classList.remove('translate-y-full');
+    } else {
+      bar.classList.add('translate-y-full');
+    }
+  });
+
+  // FAQ accordion toggle
+  function toggleFaq(item) {
+    document.querySelectorAll('.faq-item').forEach(function (el) {
+      if (el !== item) el.classList.remove('open');
+    });
+    item.classList.toggle('open');
+  }
+
+  // Form submit handler
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    var form = e.target;
+    form.style.display = 'none';
+    document.getElementById('form-success').classList.remove('hidden');
+    // Mở Zalo sau 1.5s để hỗ trợ tư vấn
+    setTimeout(function () {
+      window.open('http://zalo.me/84973671215', '_blank');
+    }, 1500);
+  }
+</script>
+
+</body>
+</html>
