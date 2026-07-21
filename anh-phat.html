@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quà Tặng 100 Ảnh Phật Pháp từ VŨ TƯ AI — ANHPHAT.VUTUAISHOP</title>
+  <meta name="description" content="Quà tặng ảnh Phật giáo AI chất lượng cao từ VŨ TƯ AI, tải về miễn phí. Ảnh thiền định, tượng Phật, phong cảnh tâm linh — dùng làm ảnh nền, in ấn, chia sẻ.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Quà Tặng 100 Ảnh Phật Pháp từ VŨ TƯ AI">
+  <meta property="og:description" content="Ảnh Phật giáo AI chất lượng cao. Bấm tải là có ngay, hoàn toàn miễn phí.">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts — Anton (tiêu đề) + Be Vietnam Pro (body), đồng bộ hệ VUTUAISHOP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink1: '#1B140C',
+            ink2: '#241A10',
+            ink3: '#2E2013',
+            gold: '#D4AF6A',
+            goldLight: '#F1D9A5',
+          },
+          fontFamily: {
+            heading: ['Anton', 'sans-serif'],
+            body:    ['"Be Vietnam Pro"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { font-family: 'Be Vietnam Pro', sans-serif; }
+    h1, h2, h3 { font-family: 'Anton', sans-serif; letter-spacing: 0.02em; }
+    html { scroll-behavior: smooth; }
+
+    body { background: #150F09; }
+
+    .bg-ink { background: #1B140C; }
+    .bg-ink-mid { background: #120D08; }
+
+    .card-photo {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(212,175,106,0.18);
+      overflow: hidden;
+    }
+    .card-photo:hover { border-color: rgba(212,175,106,0.55); }
+
+    .btn-download {
+      background: linear-gradient(90deg, #D4AF6A, #F1D9A5, #D4AF6A);
+      background-size: 200% auto;
+      color: #1B140C;
+      font-weight: 700;
+      transition: background-position 0.4s, transform 0.15s;
+    }
+    .btn-download:hover { background-position: right center; transform: translateY(-1px); }
+
+    #lightbox { backdrop-filter: blur(6px); }
+
+    .fade-in { animation: fadeIn 0.5s ease both; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body class="bg-ink text-goldLight/90">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-30 bg-ink/95 backdrop-blur border-b border-gold/15">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <div>
+        <h1 class="text-xl sm:text-2xl text-gold">ANHPHAT<span class="text-goldLight/60">.VUTUAISHOP</span></h1>
+        <p class="text-xs sm:text-sm text-goldLight/50 mt-0.5">Kho ảnh Phật giáo AI — tải miễn phí</p>
+      </div>
+      <a href="#gallery" class="hidden sm:inline-block text-sm font-semibold text-ink1 bg-gold px-5 py-2.5 rounded-full hover:bg-goldLight transition">Xem kho ảnh</a>
+    </div>
+  </header>
+
+  <!-- Banner quảng bá VU TU AI SHOP — đầu trang -->
+  <div class="bg-gold/10 border-b border-gold/20">
+    <p class="max-w-7xl mx-auto px-4 sm:px-6 py-3 text-center text-xs sm:text-sm text-goldLight/85">
+      Nếu bạn đang xây kênh Phật Pháp và cần tài khoản Gemini Pro + Tool sản xuất video AI hàng loạt thì hãy truy cập vào đây nhé:
+      <a href="https://vu-tu-ai-shop.vercel.app/" target="_blank" rel="noopener" class="text-gold font-semibold underline hover:text-goldLight">vu-tu-ai-shop.vercel.app</a>
+    </p>
+  </div>
+
+  <!-- Hero -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-10 pb-8 text-center">
+    <p class="text-gold/80 text-sm sm:text-base font-semibold tracking-wide mb-2">QUÀ TẶNG TỪ VŨ TƯ AI</p>
+    <h2 class="text-3xl sm:text-5xl text-goldLight leading-tight">QUÀ TẶNG 100 ẢNH PHẬT PHÁP<br class="hidden sm:block"> TỪ VŨ TƯ AI</h2>
+    <p class="mt-4 text-base sm:text-lg text-goldLight/60 max-w-2xl mx-auto">Ảnh thiền định, tượng Phật, phong cảnh tâm linh — mỗi ảnh đều có nút tải riêng, hoàn toàn miễn phí. Dùng làm ảnh nền, in ấn hoặc chia sẻ.</p>
+    <div class="mt-6 flex items-center justify-center gap-2 text-sm text-gold/80">
+      <span class="w-2 h-2 rounded-full bg-gold inline-block"></span>
+      <span id="counter">Đang tải...</span>
+    </div>
+  </section>
+
+  <!-- Video hướng dẫn -->
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 pb-12">
+    <h3 class="text-center text-lg sm:text-xl text-goldLight mb-4">HƯỚNG DẪN: Tool Tạo Video AI Hàng Loạt Và Tự Động Ghép Video</h3>
+    <div class="rounded-xl overflow-hidden border border-gold/20" style="aspect-ratio:16/9;">
+      <iframe class="w-full h-full" src="https://www.youtube.com/embed/hkJn9C1zzxo" title="Hướng dẫn Tool tạo video AI hàng loạt và tự động ghép video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <main id="gallery" class="max-w-7xl mx-auto px-4 sm:px-6 pb-16">
+    <div id="grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4"></div>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/85 items-center justify-center p-4">
+    <button id="lbClose" class="absolute top-4 right-4 sm:top-6 sm:right-6 text-goldLight/80 hover:text-gold text-3xl leading-none">&times;</button>
+    <button id="lbPrev" class="absolute left-2 sm:left-6 text-goldLight/70 hover:text-gold text-4xl px-2">&#8249;</button>
+    <button id="lbNext" class="absolute right-2 sm:right-6 text-goldLight/70 hover:text-gold text-4xl px-2">&#8250;</button>
+    <div class="max-w-3xl w-full flex flex-col items-center gap-4">
+      <img id="lbImg" src="" alt="" class="max-h-[75vh] rounded-lg border border-gold/20 object-contain">
+      <div class="flex items-center gap-3">
+        <span id="lbLabel" class="text-goldLight/60 text-sm"></span>
+        <a id="lbDownload" href="" download class="btn-download px-6 py-2.5 rounded-full text-sm">⬇ Tải ảnh này</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Banner quảng bá VU TU AI SHOP — cuối trang -->
+  <div class="bg-gold/10 border-t border-gold/20">
+    <p class="max-w-7xl mx-auto px-4 sm:px-6 py-4 text-center text-xs sm:text-sm text-goldLight/85">
+      Nếu bạn đang xây kênh Phật Pháp và cần tài khoản Gemini Pro + Tool sản xuất video AI hàng loạt thì hãy truy cập vào đây nhé:
+      <a href="https://vu-tu-ai-shop.vercel.app/" target="_blank" rel="noopener" class="text-gold font-semibold underline hover:text-goldLight">vu-tu-ai-shop.vercel.app</a>
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-gold/15 py-8 text-center text-goldLight/40 text-sm">
+    <p>ANHPHAT.VUTUAISHOP — thuộc hệ sinh thái VUTUAISHOP</p>
+  </footer>
+
+  <script>
+    const files = ["anh-phat-001.jpg","anh-phat-002.jpg","anh-phat-003.jpg","anh-phat-004.jpg","anh-phat-005.jpg","anh-phat-006.jpg","anh-phat-007.jpg","anh-phat-008.png","anh-phat-009.jpg","anh-phat-010.jpg","anh-phat-011.jpg","anh-phat-012.jpg","anh-phat-013.png","anh-phat-014.jpg","anh-phat-015.png","anh-phat-016.jpg","anh-phat-017.jpg","anh-phat-018.jpg","anh-phat-019.jpg","anh-phat-020.jpg","anh-phat-021.jpg","anh-phat-022.jpg","anh-phat-023.jpg","anh-phat-024.jpg","anh-phat-025.jpg","anh-phat-026.jpg","anh-phat-027.jpg","anh-phat-028.jpg","anh-phat-029.jpg","anh-phat-030.jpg","anh-phat-031.jpg","anh-phat-032.jpg","anh-phat-033.jpg","anh-phat-034.jpg","anh-phat-035.jpg","anh-phat-036.png","anh-phat-037.jpg","anh-phat-038.jpg","anh-phat-039.jpg","anh-phat-040.jpg","anh-phat-041.jpg","anh-phat-042.jpg","anh-phat-043.jpg","anh-phat-044.jpg","anh-phat-045.jpg","anh-phat-046.jpg","anh-phat-047.jpg","anh-phat-048.jpg","anh-phat-049.jpg","anh-phat-050.jpg","anh-phat-051.jpg","anh-phat-052.jpg","anh-phat-053.png","anh-phat-054.jpg","anh-phat-055.jpg","anh-phat-056.jpg","anh-phat-057.jpg","anh-phat-058.jpg","anh-phat-059.jpg","anh-phat-060.jpg","anh-phat-061.png","anh-phat-062.jpg","anh-phat-063.jpg","anh-phat-064.jpg","anh-phat-065.jpg","anh-phat-066.jpg","anh-phat-067.jpg","anh-phat-068.png","anh-phat-069.jpg","anh-phat-070.png","anh-phat-071.jpg","anh-phat-072.jpg","anh-phat-073.jpg","anh-phat-074.jpg","anh-phat-075.jpg","anh-phat-076.jpg","anh-phat-077.png","anh-phat-078.jpg","anh-phat-079.jpg","anh-phat-080.jpg","anh-phat-081.jpg","anh-phat-082.jpg","anh-phat-083.jpg","anh-phat-084.jpg","anh-phat-085.jpg","anh-phat-086.png","anh-phat-087.jpg","anh-phat-088.jpg","anh-phat-089.jpg","anh-phat-090.jpg","anh-phat-091.jpg","anh-phat-092.jpg","anh-phat-093.jpg","anh-phat-094.jpg","anh-phat-095.jpg","anh-phat-096.jpg","anh-phat-097.jpg","anh-phat-098.jpg","anh-phat-099.jpg","anh-phat-100.jpg"];
+    const BASE = "assets/anh-phat/";
+
+    document.getElementById('counter').textContent = `${files.length} ảnh sẵn sàng tải`;
+
+    const grid = document.getElementById('grid');
+    files.forEach((file, i) => {
+      const card = document.createElement('div');
+      card.className = 'card-photo fade-in rounded-xl group cursor-pointer relative';
+      card.style.animationDelay = (i % 20) * 0.03 + 's';
+      card.innerHTML = `
+        <img src="${BASE}${file}" alt="Ảnh Phật giáo AI số ${i+1}" loading="lazy"
+             class="w-full aspect-[3/4] object-cover group-hover:scale-105 transition duration-300">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition flex items-end justify-between p-2.5">
+          <span class="text-xs text-goldLight/80">#${String(i+1).padStart(3,'0')}</span>
+          <a href="${BASE}${file}" download onclick="event.stopPropagation()"
+             class="btn-download text-xs px-3 py-1.5 rounded-full">⬇ Tải</a>
+        </div>
+      `;
+      card.addEventListener('click', () => openLightbox(i));
+      grid.appendChild(card);
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbLabel = document.getElementById('lbLabel');
+    const lbDownload = document.getElementById('lbDownload');
+    let current = 0;
+
+    function openLightbox(i) {
+      current = i;
+      updateLightbox();
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+    }
+    function updateLightbox() {
+      const file = files[current];
+      lbImg.src = BASE + file;
+      lbLabel.textContent = `Ảnh #${String(current+1).padStart(3,'0')} / ${files.length}`;
+      lbDownload.href = BASE + file;
+      lbDownload.setAttribute('download', file);
+    }
+    document.getElementById('lbClose').addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+    });
+    document.getElementById('lbPrev').addEventListener('click', () => {
+      current = (current - 1 + files.length) % files.length;
+      updateLightbox();
+    });
+    document.getElementById('lbNext').addEventListener('click', () => {
+      current = (current + 1) % files.length;
+      updateLightbox();
+    });
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.classList.contains('hidden')) return;
+      if (e.key === 'Escape') document.getElementById('lbClose').click();
+      if (e.key === 'ArrowLeft') document.getElementById('lbPrev').click();
+      if (e.key === 'ArrowRight') document.getElementById('lbNext').click();
+    });
+  </script>
+</body>
+</html>
